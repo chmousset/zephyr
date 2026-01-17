@@ -1,0 +1,23 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+description: Allwinner D1s/F133 Clock Control Unit
+
+compatible: "allwinner,sun20i-d1-ccu"
+
+include: base.yaml
+
+properties:
+  reg:
+    required: true
+
+  "#clock-cells":
+    type: int
+    const: 1
+
+  clock-frequency:
+    type: int
+    description: Input oscillator rate in Hz (HOSC).
+
+clock-cells:
+  - clkid

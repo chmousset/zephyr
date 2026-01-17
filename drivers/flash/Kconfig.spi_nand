@@ -1,0 +1,15 @@
+# SPI NAND flash configuration options
+
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig SPI_NAND
+	bool "SPI NAND Flash"
+	default y
+	depends on DT_HAS_JEDEC_SPI_NAND_ENABLED
+	select FLASH_HAS_DRIVER_ENABLED
+	select FLASH_HAS_EXPLICIT_ERASE
+	select FLASH_HAS_PAGE_LAYOUT
+	select SPI
+	help
+	  Enable the SPI NAND flash driver using a JEDEC-style command set.

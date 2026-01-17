@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: Apache-2.0
+
+config SUNXI_EGON_HEADER
+	bool "Embed sunxi eGON.BT0 header"
+	default y if SOC_ALLWINNER_D1S || SOC_SUN8I_H3
+	depends on SOC_ALLWINNER_D1S || SOC_SUN8I_H3
+	help
+	  Embed a minimal eGON.BT0 header at the start of the image. The
+	  header is patched post-build with length and checksum, allowing
+	  direct flash boot while still supporting SRAM loading.
+
+	  Documentation:
+	    - doc/hardware/soc/allwinner/egon_header.rst
+	    - https://linux-sunxi.org/BROM
+	    - https://linux-sunxi.org/EGON

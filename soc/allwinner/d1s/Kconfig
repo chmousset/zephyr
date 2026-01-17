@@ -1,0 +1,29 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_SERIES_ALLWINNER_D1
+	bool
+	select RISCV
+	select RISCV_PRIVILEGED
+	select RISCV_HAS_PLIC
+	select RISCV_SOC_HAS_GP_RELATIVE_ADDRESSING
+
+config SOC_ALLWINNER_D1S
+	bool
+	select SOC_SERIES_ALLWINNER_D1
+	select INCLUDE_RESET_VECTOR
+	select RISCV_ISA_RV64I
+	select RISCV_ISA_EXT_M
+	select RISCV_ISA_EXT_A
+	select RISCV_ISA_EXT_C
+	select RISCV_ISA_EXT_ZICSR
+	select RISCV_ISA_EXT_ZIFENCEI
+
+config SOC_ALLWINNER_D1S_DDR_INIT
+	bool "Initialize D1s DRAM controller"
+	default y
+	depends on SOC_ALLWINNER_D1S
+	help
+	  Enable the early DRAM initialization hook for Allwinner D1s/F133.
+
+source "soc/allwinner/common/Kconfig.zephyr"

@@ -1,0 +1,58 @@
+/*
+ * Copyright (c) 2025
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <dt-bindings/gpio/gpio.h>
+#include <allwinner/sun20i-d1s.dtsi>
+
+/ {
+	model = "MangoPi MQ1W";
+	compatible = "widora,mangopi-mq1w", "allwinner,sun20i-d1s";
+	#address-cells = <1>;
+	#size-cells = <1>;
+
+	aliases {
+		led0 = &led0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		led0: led_0 {
+			gpios = <&gpio_d 22 GPIO_ACTIVE_LOW>;
+			label = "STATUS";
+		};
+	};
+};
+
+&uart3 {
+	status = "okay";
+	current-speed = <115200>;
+	pinctrl-0 = <&pb6_uart3_tx &pb7_uart3_rx>;
+	pinctrl-names = "default";
+};
+
+&i2c1 {
+	status = "okay";
+	pinctrl-0 = <&pb4_twi1_sck &pb5_twi1_sda>;
+	pinctrl-names = "default";
+
+	tmp102: tmp102@48 {
+		compatible = "ti,tmp112";
+		reg = <0x48>;
+	};
+};
+
+&spi0 {
+	status = "okay";
+	pinctrl-0 = <&pc2_spi0_clk &pc3_spi0_cs0 &pc4_spi0_mosi &pc5_spi0_miso &pc6_spi0_wp &pc7_spi0_hold>;
+	pinctrl-names = "default";
+
+	flash0: flash@0 {
+		compatible = "jedec,spi-nor";
+		reg = <0>;
+		spi-max-frequency = <10000000>;
+	};
+};

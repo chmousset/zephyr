@@ -1,0 +1,38 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+description: Allwinner D1s/F133 PIO pin controller
+
+compatible: "allwinner,sun20i-d1-pinctrl"
+
+include: base.yaml
+
+properties:
+  reg:
+    required: true
+
+child-binding:
+  description: |
+    Allwinner D1s/F133 pin configuration.
+
+  include:
+    - name: pincfg-node.yaml
+      property-allowlist:
+        - bias-disable
+        - bias-pull-down
+        - bias-pull-up
+        - drive-strength
+
+  properties:
+    pinmux:
+      required: true
+      type: int
+      description: |
+        Encodes the port, pin, and function select value.
+        Use the ALLWINNER_D1_PINMUX() macro in
+        include/zephyr/dt-bindings/pinctrl/allwinner-d1-pinctrl.h.
+    drive-strength:
+      type: int
+      enum: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+      description: |
+        Drive strength level (0..15). The SoC uses 4-bit drive selection.

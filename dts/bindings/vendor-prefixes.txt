@@ -706,6 +706,7 @@ terasic	Terasic Inc.
 tfc	Three Five Corp
 thine	THine Electronics, Inc.
 thingyjp	thingy.jp
+thead	T-Head Semiconductor Co., Ltd.
 ti	Texas Instruments
 tianma	Tianma Micro-electronics Co., Ltd.
 titanmec	Shenzhen Titan Micro Electronics Co., Ltd.
@@ -772,6 +773,7 @@ wetek	WeTek Electronics, limited.
 wexler	Wexler
 whwave	Shenzhen whwave Electronics, Inc.
 wi2wi	Wi2Wi, Inc.
+widora	Widora
 winbond	Winbond Electronics corp.
 winsen	Zhengzhou Winsen Electronics Technology Co., Ltd.
 winstar	Winstar Display Corp.

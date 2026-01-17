@@ -1,0 +1,25 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  SPI NAND flash device with a JEDEC-style command set.
+
+compatible: "jedec,spi-nand"
+
+include: spi-device.yaml
+
+properties:
+  page-size:
+    type: int
+    required: true
+    description: Page size in bytes.
+
+  pages-per-block:
+    type: int
+    required: true
+    description: Number of pages per erase block.
+
+  block-count:
+    type: int
+    required: true
+    description: Number of erase blocks on the device.

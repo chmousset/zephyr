@@ -1,0 +1,19 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_SERIES_ALLWINNER_SUN20I
+	bool
+	help
+	  Allwinner sun20i series
+
+config SOC_ALLWINNER_D1S
+	bool
+	select SOC_SERIES_ALLWINNER_SUN20I
+	help
+	  Allwinner D1s/F133
+
+config SOC_SERIES
+	default "sun20i" if SOC_SERIES_ALLWINNER_SUN20I
+
+config SOC
+	default "d1s" if SOC_ALLWINNER_D1S

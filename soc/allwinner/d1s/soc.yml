@@ -1,0 +1,4 @@
+series:
+- name: sun20i
+  socs:
+  - name: d1s

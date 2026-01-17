@@ -1,0 +1,13 @@
+# Allwinner sun20i D1 PWM configuration options
+
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+config PWM_SUN20I_D1
+	bool "Allwinner sun20i D1 PWM driver"
+	default y
+	depends on DT_HAS_ALLWINNER_SUN20I_D1_PWM_ENABLED
+	select PINCTRL
+	help
+	  Enable the PWM driver for the sun20i D1 PWM block used by
+	  Allwinner D1/D1s (F133) SoCs.

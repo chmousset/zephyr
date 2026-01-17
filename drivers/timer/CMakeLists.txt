@@ -5,6 +5,7 @@ zephyr_library_sources(sys_clock_init.c)
 
 # zephyr-keep-sorted-start
 zephyr_library_sources_ifdef(CONFIG_AMBIQ_STIMER_TIMER ambiq_stimer.c)
+zephyr_library_sources_ifdef(CONFIG_ALLWINNER_D1_TIMER allwinner_d1_timer.c)
 zephyr_library_sources_ifdef(CONFIG_APIC_TIMER apic_timer.c)
 zephyr_library_sources_ifdef(CONFIG_APIC_TIMER_TSC apic_tsc.c)
 zephyr_library_sources_ifdef(CONFIG_APIC_TSC_DEADLINE_TIMER apic_tsc.c)

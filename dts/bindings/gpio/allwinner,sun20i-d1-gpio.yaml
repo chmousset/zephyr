@@ -1,0 +1,19 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+description: Allwinner D1s/F133 GPIO port controller
+
+compatible: "allwinner,sun20i-d1-gpio"
+
+include: [gpio-controller.yaml, base.yaml]
+
+properties:
+  reg:
+    required: true
+
+  "#gpio-cells":
+    const: 2
+
+gpio-cells:
+  - pin
+  - flags

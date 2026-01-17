@@ -1,0 +1,42 @@
+/*
+ * Copyright (c) 2025
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#ifndef ZEPHYR_INCLUDE_DT_BINDINGS_PINCTRL_ALLWINNER_D1_PINCTRL_H_
+#define ZEPHYR_INCLUDE_DT_BINDINGS_PINCTRL_ALLWINNER_D1_PINCTRL_H_
+
+/*
+ * D1s/F133 pinmux encoding:
+ * - bits 0..3: function select
+ * - bits 4..8: pin number
+ * - bits 9..12: port index (PA=0, PB=1, ...)
+ */
+
+#define ALLWINNER_D1_PINMUX_FUNC_SHIFT 0
+#define ALLWINNER_D1_PINMUX_FUNC_MASK  0xF
+
+#define ALLWINNER_D1_PINMUX_PIN_SHIFT  4
+#define ALLWINNER_D1_PINMUX_PIN_MASK   0x1F
+
+#define ALLWINNER_D1_PINMUX_PORT_SHIFT 9
+#define ALLWINNER_D1_PINMUX_PORT_MASK  0xF
+
+#define ALLWINNER_D1_PINMUX(port, pin, func) \
+	(((port) << ALLWINNER_D1_PINMUX_PORT_SHIFT) | \
+	 ((pin) << ALLWINNER_D1_PINMUX_PIN_SHIFT) | \
+	 ((func) << ALLWINNER_D1_PINMUX_FUNC_SHIFT))
+
+#define ALLWINNER_D1_PORT_A 0
+#define ALLWINNER_D1_PORT_B 1
+#define ALLWINNER_D1_PORT_C 2
+#define ALLWINNER_D1_PORT_D 3
+#define ALLWINNER_D1_PORT_E 4
+#define ALLWINNER_D1_PORT_F 5
+#define ALLWINNER_D1_PORT_G 6
+
+#define ALLWINNER_D1_FUNC_INPUT  0x0
+#define ALLWINNER_D1_FUNC_OUTPUT 0x1
+
+#endif /* ZEPHYR_INCLUDE_DT_BINDINGS_PINCTRL_ALLWINNER_D1_PINCTRL_H_ */

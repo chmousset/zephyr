@@ -1,0 +1,64 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_ALLWINNER_D1S
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default 24000000
+
+config CLOCK_CONTROL
+	default y
+
+config PINCTRL
+	default y
+
+config RISCV_SOC_INTERRUPT_INIT
+	default y
+
+config 2ND_LVL_ISR_TBL_OFFSET
+	default 12
+
+config 2ND_LVL_INTR_00_OFFSET
+	default 11
+
+config MAX_IRQ_PER_AGGREGATOR
+	default 175
+
+config NUM_IRQS
+	default 187
+
+config MULTI_LEVEL_INTERRUPTS
+	default y
+
+config 2ND_LEVEL_INTERRUPTS
+	default y
+
+config NUM_2ND_LEVEL_AGGREGATORS
+	default 1
+
+config PLIC
+	default y
+
+config PINCTRL_ALLWINNER_D1
+	default y
+
+config CLOCK_CONTROL_ALLWINNER_D1
+	default y
+
+config ALLWINNER_D1_TIMER
+	default y
+
+if SERIAL
+
+config UART_NS16550
+	default y
+
+config UART_NS16550_DW8250_DW_APB
+	default y
+
+config UART_NS16550_ACCESS_WORD_ONLY
+	default y
+
+endif # SERIAL
+
+endif

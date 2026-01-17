@@ -1,0 +1,13 @@
+# Allwinner sun6i SPI configuration options
+
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+config SPI_SUN6I
+	bool "Allwinner sun6i SPI driver"
+	default y
+	depends on DT_HAS_ALLWINNER_SUN20I_D1_SPI_ENABLED
+	select PINCTRL
+	help
+	  Enable the sun6i-style SPI controller driver used by
+	  Allwinner D1/D1s (F133) SoCs.

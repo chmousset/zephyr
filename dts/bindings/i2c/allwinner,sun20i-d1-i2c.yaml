@@ -1,0 +1,16 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+description: Allwinner D1s/F133 TWI (I2C) controller
+
+compatible: "allwinner,sun20i-d1-i2c"
+
+include: [i2c-controller.yaml, pinctrl-device.yaml]
+
+properties:
+  reg:
+    required: true
+
+  clocks:
+    type: phandle-array
+    description: Bus clock gate/reset for the TWI controller.

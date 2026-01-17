@@ -1,0 +1,2262 @@
+/*
+ * Auto-generated from D1s User Manual pin multiplex tables.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/dt-bindings/pinctrl/allwinner-d1-pinctrl.h>
+
+&pinctrl {
+	/omit-if-no-ref/
+	pb2_gpio_in: pb2_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 2, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pb2_gpio_out: pb2_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 2, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pb2_lcd0_d0: pb2_lcd0_d0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 2, 2)>;
+	};
+	/omit-if-no-ref/
+	pb2_i2s2_dout2: pb2_i2s2_dout2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 2, 3)>;
+	};
+	/omit-if-no-ref/
+	pb2_twi0_sda: pb2_twi0_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 2, 4)>;
+	};
+	/omit-if-no-ref/
+	pb2_i2s2_din2: pb2_i2s2_din2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 2, 5)>;
+	};
+	/omit-if-no-ref/
+	pb2_lcd0_d18: pb2_lcd0_d18 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 2, 6)>;
+	};
+	/omit-if-no-ref/
+	pb2_uart4_tx: pb2_uart4_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 2, 7)>;
+	};
+	/omit-if-no-ref/
+	pb2_pb_eint2: pb2_pb_eint2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 2, 14)>;
+	};
+	/omit-if-no-ref/
+	pb3_gpio_in: pb3_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 3, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pb3_gpio_out: pb3_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 3, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pb3_lcd0_d1: pb3_lcd0_d1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 3, 2)>;
+	};
+	/omit-if-no-ref/
+	pb3_i2s2_dout1: pb3_i2s2_dout1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 3, 3)>;
+	};
+	/omit-if-no-ref/
+	pb3_twi0_sck: pb3_twi0_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 3, 4)>;
+	};
+	/omit-if-no-ref/
+	pb3_i2s2_din0: pb3_i2s2_din0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 3, 5)>;
+	};
+	/omit-if-no-ref/
+	pb3_lcd0_d19: pb3_lcd0_d19 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 3, 6)>;
+	};
+	/omit-if-no-ref/
+	pb3_uart4_rx: pb3_uart4_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 3, 7)>;
+	};
+	/omit-if-no-ref/
+	pb3_pb_eint3: pb3_pb_eint3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 3, 14)>;
+	};
+	/omit-if-no-ref/
+	pb4_gpio_in: pb4_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 4, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pb4_gpio_out: pb4_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 4, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pb4_lcd0_d8: pb4_lcd0_d8 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 4, 2)>;
+	};
+	/omit-if-no-ref/
+	pb4_i2s2_dout0: pb4_i2s2_dout0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 4, 3)>;
+	};
+	/omit-if-no-ref/
+	pb4_twi1_sck: pb4_twi1_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 4, 4)>;
+	};
+	/omit-if-no-ref/
+	pb4_i2s2_din1: pb4_i2s2_din1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 4, 5)>;
+	};
+	/omit-if-no-ref/
+	pb4_lcd0_d20: pb4_lcd0_d20 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 4, 6)>;
+	};
+	/omit-if-no-ref/
+	pb4_uart5_tx: pb4_uart5_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 4, 7)>;
+	};
+	/omit-if-no-ref/
+	pb4_pb_eint4: pb4_pb_eint4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 4, 14)>;
+	};
+	/omit-if-no-ref/
+	pb5_gpio_in: pb5_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 5, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pb5_gpio_out: pb5_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 5, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pb5_lcd0_d9: pb5_lcd0_d9 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 5, 2)>;
+	};
+	/omit-if-no-ref/
+	pb5_i2s2_bclk: pb5_i2s2_bclk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 5, 3)>;
+	};
+	/omit-if-no-ref/
+	pb5_twi1_sda: pb5_twi1_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 5, 4)>;
+	};
+	/omit-if-no-ref/
+	pb5_pwm0: pb5_pwm0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 5, 5)>;
+	};
+	/omit-if-no-ref/
+	pb5_lcd0_d21: pb5_lcd0_d21 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 5, 6)>;
+	};
+	/omit-if-no-ref/
+	pb5_uart5_rx: pb5_uart5_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 5, 7)>;
+	};
+	/omit-if-no-ref/
+	pb5_pb_eint5: pb5_pb_eint5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 5, 14)>;
+	};
+	/omit-if-no-ref/
+	pb6_gpio_in: pb6_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pb6_gpio_out: pb6_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pb6_lcd0_d16: pb6_lcd0_d16 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, 2)>;
+	};
+	/omit-if-no-ref/
+	pb6_i2s2_lrck: pb6_i2s2_lrck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, 3)>;
+	};
+	/omit-if-no-ref/
+	pb6_twi3_sck: pb6_twi3_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, 4)>;
+	};
+	/omit-if-no-ref/
+	pb6_pwm1: pb6_pwm1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, 5)>;
+	};
+	/omit-if-no-ref/
+	pb6_lcd0_d22: pb6_lcd0_d22 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, 6)>;
+	};
+	/omit-if-no-ref/
+	pb6_uart3_tx: pb6_uart3_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, 7)>;
+	};
+	/omit-if-no-ref/
+	pb6_cpubist0: pb6_cpubist0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, 8)>;
+	};
+	/omit-if-no-ref/
+	pb6_pb_eint6: pb6_pb_eint6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 6, 14)>;
+	};
+	/omit-if-no-ref/
+	pb7_gpio_in: pb7_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pb7_gpio_out: pb7_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pb7_lcd0_d17: pb7_lcd0_d17 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, 2)>;
+	};
+	/omit-if-no-ref/
+	pb7_i2s2_mclk: pb7_i2s2_mclk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, 3)>;
+	};
+	/omit-if-no-ref/
+	pb7_twi3_sda: pb7_twi3_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, 4)>;
+	};
+	/omit-if-no-ref/
+	pb7_ir_rx: pb7_ir_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, 5)>;
+	};
+	/omit-if-no-ref/
+	pb7_lcd0_d23: pb7_lcd0_d23 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, 6)>;
+	};
+	/omit-if-no-ref/
+	pb7_uart3_rx: pb7_uart3_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, 7)>;
+	};
+	/omit-if-no-ref/
+	pb7_cpubist1: pb7_cpubist1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, 8)>;
+	};
+	/omit-if-no-ref/
+	pb7_pb_eint7: pb7_pb_eint7 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 7, 14)>;
+	};
+	/omit-if-no-ref/
+	pb8_uart0_tx: pb8_uart0_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 8, 6)>;
+	};
+	/omit-if-no-ref/
+	pb9_uart0_rx: pb9_uart0_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_B, 9, 6)>;
+	};
+	/omit-if-no-ref/
+	pc2_gpio_in: pc2_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 2, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pc2_gpio_out: pc2_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 2, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pc2_spi0_clk: pc2_spi0_clk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 2, 2)>;
+	};
+	/omit-if-no-ref/
+	pc2_sdc2_clk: pc2_sdc2_clk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 2, 3)>;
+	};
+	/omit-if-no-ref/
+	pc2_pc_eint2: pc2_pc_eint2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 2, 14)>;
+	};
+	/omit-if-no-ref/
+	pc3_gpio_in: pc3_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 3, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pc3_gpio_out: pc3_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 3, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pc3_spi0_cs0: pc3_spi0_cs0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 3, 2)>;
+	};
+	/omit-if-no-ref/
+	pc3_sdc2_cmd: pc3_sdc2_cmd {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 3, 3)>;
+	};
+	/omit-if-no-ref/
+	pc3_pc_eint3: pc3_pc_eint3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 3, 14)>;
+	};
+	/omit-if-no-ref/
+	pc4_gpio_in: pc4_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 4, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pc4_gpio_out: pc4_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 4, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pc4_spi0_mosi: pc4_spi0_mosi {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 4, 2)>;
+	};
+	/omit-if-no-ref/
+	pc4_sdc2_d2: pc4_sdc2_d2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 4, 3)>;
+	};
+	/omit-if-no-ref/
+	pc4_boot_sel0: pc4_boot_sel0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 4, 4)>;
+	};
+	/omit-if-no-ref/
+	pc4_pc_eint4: pc4_pc_eint4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 4, 14)>;
+	};
+	/omit-if-no-ref/
+	pc5_gpio_in: pc5_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 5, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pc5_gpio_out: pc5_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 5, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pc5_spi0_miso: pc5_spi0_miso {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 5, 2)>;
+	};
+	/omit-if-no-ref/
+	pc5_sdc2_d1: pc5_sdc2_d1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 5, 3)>;
+	};
+	/omit-if-no-ref/
+	pc5_boot_sel1: pc5_boot_sel1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 5, 4)>;
+	};
+	/omit-if-no-ref/
+	pc5_pc_eint5: pc5_pc_eint5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 5, 14)>;
+	};
+	/omit-if-no-ref/
+	pc6_gpio_in: pc6_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 6, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pc6_gpio_out: pc6_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 6, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pc6_spi0_wp: pc6_spi0_wp {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 6, 2)>;
+	};
+	/omit-if-no-ref/
+	pc6_sdc2_d0: pc6_sdc2_d0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 6, 3)>;
+	};
+	/omit-if-no-ref/
+	pc6_uart3_tx: pc6_uart3_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 6, 4)>;
+	};
+	/omit-if-no-ref/
+	pc6_twi3_sck: pc6_twi3_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 6, 5)>;
+	};
+	/omit-if-no-ref/
+	pc6_dbg_clk: pc6_dbg_clk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 6, 6)>;
+	};
+	/omit-if-no-ref/
+	pc6_pc_eint6: pc6_pc_eint6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 6, 14)>;
+	};
+	/omit-if-no-ref/
+	pc7_gpio_in: pc7_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 7, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pc7_gpio_out: pc7_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 7, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pc7_spi0_hold: pc7_spi0_hold {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 7, 2)>;
+	};
+	/omit-if-no-ref/
+	pc7_sdc2_d3: pc7_sdc2_d3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 7, 3)>;
+	};
+	/omit-if-no-ref/
+	pc7_uart3_rx: pc7_uart3_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 7, 4)>;
+	};
+	/omit-if-no-ref/
+	pc7_twi3_sda: pc7_twi3_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 7, 5)>;
+	};
+	/omit-if-no-ref/
+	pc7_tcon_trig: pc7_tcon_trig {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 7, 6)>;
+	};
+	/omit-if-no-ref/
+	pc7_pc_eint7: pc7_pc_eint7 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_C, 7, 14)>;
+	};
+	/omit-if-no-ref/
+	pd0_gpio_in: pd0_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 0, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd0_gpio_out: pd0_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 0, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd0_lcd0_d2: pd0_lcd0_d2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 0, 2)>;
+	};
+	/omit-if-no-ref/
+	pd0_lvds0_v0p: pd0_lvds0_v0p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 0, 3)>;
+	};
+	/omit-if-no-ref/
+	pd0_dsi_d0p: pd0_dsi_d0p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 0, 4)>;
+	};
+	/omit-if-no-ref/
+	pd0_twi0_sck: pd0_twi0_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 0, 5)>;
+	};
+	/omit-if-no-ref/
+	pd0_pd_eint0: pd0_pd_eint0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 0, 14)>;
+	};
+	/omit-if-no-ref/
+	pd1_gpio_in: pd1_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 1, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd1_gpio_out: pd1_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 1, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd1_lcd0_d3: pd1_lcd0_d3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 1, 2)>;
+	};
+	/omit-if-no-ref/
+	pd1_lvds0_v0n: pd1_lvds0_v0n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 1, 3)>;
+	};
+	/omit-if-no-ref/
+	pd1_dsi_d0n: pd1_dsi_d0n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 1, 4)>;
+	};
+	/omit-if-no-ref/
+	pd1_uart2_tx: pd1_uart2_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 1, 5)>;
+	};
+	/omit-if-no-ref/
+	pd1_pd_eint1: pd1_pd_eint1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 1, 14)>;
+	};
+	/omit-if-no-ref/
+	pd2_gpio_in: pd2_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 2, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd2_gpio_out: pd2_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 2, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd2_lcd0_d4: pd2_lcd0_d4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 2, 2)>;
+	};
+	/omit-if-no-ref/
+	pd2_lvds0_v1p: pd2_lvds0_v1p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 2, 3)>;
+	};
+	/omit-if-no-ref/
+	pd2_dsi_d1p: pd2_dsi_d1p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 2, 4)>;
+	};
+	/omit-if-no-ref/
+	pd2_uart2_rx: pd2_uart2_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 2, 5)>;
+	};
+	/omit-if-no-ref/
+	pd2_pd_eint2: pd2_pd_eint2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 2, 14)>;
+	};
+	/omit-if-no-ref/
+	pd3_gpio_in: pd3_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 3, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd3_gpio_out: pd3_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 3, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd3_lcd0_d5: pd3_lcd0_d5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 3, 2)>;
+	};
+	/omit-if-no-ref/
+	pd3_lvds0_v1n: pd3_lvds0_v1n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 3, 3)>;
+	};
+	/omit-if-no-ref/
+	pd3_dsi_d1n: pd3_dsi_d1n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 3, 4)>;
+	};
+	/omit-if-no-ref/
+	pd3_uart2_rts: pd3_uart2_rts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 3, 5)>;
+	};
+	/omit-if-no-ref/
+	pd3_pd_eint3: pd3_pd_eint3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 3, 14)>;
+	};
+	/omit-if-no-ref/
+	pd4_gpio_in: pd4_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 4, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd4_gpio_out: pd4_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 4, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd4_lcd0_d6: pd4_lcd0_d6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 4, 2)>;
+	};
+	/omit-if-no-ref/
+	pd4_lvds0_v2p: pd4_lvds0_v2p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 4, 3)>;
+	};
+	/omit-if-no-ref/
+	pd4_dsi_ckp: pd4_dsi_ckp {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 4, 4)>;
+	};
+	/omit-if-no-ref/
+	pd4_uart2_cts: pd4_uart2_cts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 4, 5)>;
+	};
+	/omit-if-no-ref/
+	pd4_pd_eint4: pd4_pd_eint4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 4, 14)>;
+	};
+	/omit-if-no-ref/
+	pd5_gpio_in: pd5_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 5, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd5_gpio_out: pd5_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 5, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd5_lcd0_d7: pd5_lcd0_d7 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 5, 2)>;
+	};
+	/omit-if-no-ref/
+	pd5_lvds0_v2n: pd5_lvds0_v2n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 5, 3)>;
+	};
+	/omit-if-no-ref/
+	pd5_dsi_ckn: pd5_dsi_ckn {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 5, 4)>;
+	};
+	/omit-if-no-ref/
+	pd5_uart5_tx: pd5_uart5_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 5, 5)>;
+	};
+	/omit-if-no-ref/
+	pd5_pd_eint5: pd5_pd_eint5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 5, 14)>;
+	};
+	/omit-if-no-ref/
+	pd6_gpio_in: pd6_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 6, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd6_gpio_out: pd6_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 6, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd6_lcd0_d10: pd6_lcd0_d10 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 6, 2)>;
+	};
+	/omit-if-no-ref/
+	pd6_lvds0_ckp: pd6_lvds0_ckp {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 6, 3)>;
+	};
+	/omit-if-no-ref/
+	pd6_dsi_d2p: pd6_dsi_d2p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 6, 4)>;
+	};
+	/omit-if-no-ref/
+	pd6_uart5_rx: pd6_uart5_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 6, 5)>;
+	};
+	/omit-if-no-ref/
+	pd6_pd_eint6: pd6_pd_eint6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 6, 14)>;
+	};
+	/omit-if-no-ref/
+	pd7_gpio_in: pd7_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 7, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd7_gpio_out: pd7_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 7, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd7_lcd0_d11: pd7_lcd0_d11 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 7, 2)>;
+	};
+	/omit-if-no-ref/
+	pd7_lvds0_ckn: pd7_lvds0_ckn {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 7, 3)>;
+	};
+	/omit-if-no-ref/
+	pd7_dsi_d2n: pd7_dsi_d2n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 7, 4)>;
+	};
+	/omit-if-no-ref/
+	pd7_uart4_tx: pd7_uart4_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 7, 5)>;
+	};
+	/omit-if-no-ref/
+	pd7_pd_eint7: pd7_pd_eint7 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 7, 14)>;
+	};
+	/omit-if-no-ref/
+	pd8_gpio_in: pd8_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 8, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd8_gpio_out: pd8_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 8, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd8_lcd0_d12: pd8_lcd0_d12 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 8, 2)>;
+	};
+	/omit-if-no-ref/
+	pd8_lvds0_v3p: pd8_lvds0_v3p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 8, 3)>;
+	};
+	/omit-if-no-ref/
+	pd8_dsi_d3p: pd8_dsi_d3p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 8, 4)>;
+	};
+	/omit-if-no-ref/
+	pd8_uart4_rx: pd8_uart4_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 8, 5)>;
+	};
+	/omit-if-no-ref/
+	pd8_pd_eint8: pd8_pd_eint8 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 8, 14)>;
+	};
+	/omit-if-no-ref/
+	pd9_gpio_in: pd9_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 9, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd9_gpio_out: pd9_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 9, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd9_lcd0_d13: pd9_lcd0_d13 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 9, 2)>;
+	};
+	/omit-if-no-ref/
+	pd9_lvds0_v3n: pd9_lvds0_v3n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 9, 3)>;
+	};
+	/omit-if-no-ref/
+	pd9_dsi_d3n: pd9_dsi_d3n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 9, 4)>;
+	};
+	/omit-if-no-ref/
+	pd9_pwm6: pd9_pwm6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 9, 5)>;
+	};
+	/omit-if-no-ref/
+	pd9_pd_eint9: pd9_pd_eint9 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 9, 14)>;
+	};
+	/omit-if-no-ref/
+	pd10_gpio_in: pd10_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 10, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd10_gpio_out: pd10_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 10, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd10_lcd0_d14: pd10_lcd0_d14 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 10, 2)>;
+	};
+	/omit-if-no-ref/
+	pd10_lvds1_v0p: pd10_lvds1_v0p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 10, 3)>;
+	};
+	/omit-if-no-ref/
+	pd10_dbi_csx: pd10_dbi_csx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 10, 4)>;
+	};
+	/omit-if-no-ref/
+	pd10_spi1_clk: pd10_spi1_clk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 10, 4)>;
+	};
+	/omit-if-no-ref/
+	pd10_spi1_cs: pd10_spi1_cs {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 10, 4)>;
+	};
+	/omit-if-no-ref/
+	pd10_uart3_tx: pd10_uart3_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 10, 5)>;
+	};
+	/omit-if-no-ref/
+	pd10_pd_eint10: pd10_pd_eint10 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 10, 14)>;
+	};
+	/omit-if-no-ref/
+	pd11_gpio_in: pd11_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 11, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd11_gpio_out: pd11_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 11, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd11_lcd0_d15: pd11_lcd0_d15 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 11, 2)>;
+	};
+	/omit-if-no-ref/
+	pd11_lvds1_v0n: pd11_lvds1_v0n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 11, 3)>;
+	};
+	/omit-if-no-ref/
+	pd11_dbi_sclk: pd11_dbi_sclk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 11, 4)>;
+	};
+	/omit-if-no-ref/
+	pd11_spi1_mosi: pd11_spi1_mosi {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 11, 4)>;
+	};
+	/omit-if-no-ref/
+	pd11_uart3_rx: pd11_uart3_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 11, 5)>;
+	};
+	/omit-if-no-ref/
+	pd11_pd_eint11: pd11_pd_eint11 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 11, 14)>;
+	};
+	/omit-if-no-ref/
+	pd12_gpio_in: pd12_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 12, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd12_gpio_out: pd12_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 12, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd12_lcd0_d18: pd12_lcd0_d18 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 12, 2)>;
+	};
+	/omit-if-no-ref/
+	pd12_lvds1_v1p: pd12_lvds1_v1p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 12, 3)>;
+	};
+	/omit-if-no-ref/
+	pd12_dbi_sdo: pd12_dbi_sdo {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 12, 4)>;
+	};
+	/omit-if-no-ref/
+	pd12_twi0_sda: pd12_twi0_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 12, 5)>;
+	};
+	/omit-if-no-ref/
+	pd12_pd_eint12: pd12_pd_eint12 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 12, 14)>;
+	};
+	/omit-if-no-ref/
+	pd13_gpio_in: pd13_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd13_gpio_out: pd13_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd13_lcd0_d19: pd13_lcd0_d19 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, 2)>;
+	};
+	/omit-if-no-ref/
+	pd13_lvds1_v1n: pd13_lvds1_v1n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, 3)>;
+	};
+	/omit-if-no-ref/
+	pd13_dbi_dcx: pd13_dbi_dcx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, 4)>;
+	};
+	/omit-if-no-ref/
+	pd13_dbi_sdi: pd13_dbi_sdi {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, 4)>;
+	};
+	/omit-if-no-ref/
+	pd13_dbi_te: pd13_dbi_te {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, 4)>;
+	};
+	/omit-if-no-ref/
+	pd13_spi1_hold: pd13_spi1_hold {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, 4)>;
+	};
+	/omit-if-no-ref/
+	pd13_uart3_rts: pd13_uart3_rts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, 5)>;
+	};
+	/omit-if-no-ref/
+	pd13_pd_eint13: pd13_pd_eint13 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 13, 14)>;
+	};
+	/omit-if-no-ref/
+	pd14_gpio_in: pd14_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 14, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd14_gpio_out: pd14_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 14, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd14_lcd0_d20: pd14_lcd0_d20 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 14, 2)>;
+	};
+	/omit-if-no-ref/
+	pd14_lvds1_v2p: pd14_lvds1_v2p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 14, 3)>;
+	};
+	/omit-if-no-ref/
+	pd14_dbi_dcx: pd14_dbi_dcx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 14, 4)>;
+	};
+	/omit-if-no-ref/
+	pd14_dbi_wrx: pd14_dbi_wrx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 14, 4)>;
+	};
+	/omit-if-no-ref/
+	pd14_uart3_cts: pd14_uart3_cts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 14, 5)>;
+	};
+	/omit-if-no-ref/
+	pd14_pd_eint14: pd14_pd_eint14 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 14, 14)>;
+	};
+	/omit-if-no-ref/
+	pd15_gpio_in: pd15_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 15, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd15_gpio_out: pd15_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 15, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd15_lcd0_d21: pd15_lcd0_d21 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 15, 2)>;
+	};
+	/omit-if-no-ref/
+	pd15_lvds1_v2n: pd15_lvds1_v2n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 15, 3)>;
+	};
+	/omit-if-no-ref/
+	pd15_dbi_te: pd15_dbi_te {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 15, 4)>;
+	};
+	/omit-if-no-ref/
+	pd15_spi1_wp: pd15_spi1_wp {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 15, 4)>;
+	};
+	/omit-if-no-ref/
+	pd15_ir_rx: pd15_ir_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 15, 5)>;
+	};
+	/omit-if-no-ref/
+	pd15_pd_eint15: pd15_pd_eint15 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 15, 14)>;
+	};
+	/omit-if-no-ref/
+	pd16_gpio_in: pd16_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 16, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd16_gpio_out: pd16_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 16, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd16_lcd0_d22: pd16_lcd0_d22 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 16, 2)>;
+	};
+	/omit-if-no-ref/
+	pd16_lvds1_ckp: pd16_lvds1_ckp {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 16, 3)>;
+	};
+	/omit-if-no-ref/
+	pd16_dmic_data3: pd16_dmic_data3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 16, 4)>;
+	};
+	/omit-if-no-ref/
+	pd16_pwm0: pd16_pwm0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 16, 5)>;
+	};
+	/omit-if-no-ref/
+	pd16_pd_eint16: pd16_pd_eint16 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 16, 14)>;
+	};
+	/omit-if-no-ref/
+	pd17_gpio_in: pd17_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 17, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd17_gpio_out: pd17_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 17, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd17_lcd0_d23: pd17_lcd0_d23 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 17, 2)>;
+	};
+	/omit-if-no-ref/
+	pd17_lvds1_ckn: pd17_lvds1_ckn {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 17, 3)>;
+	};
+	/omit-if-no-ref/
+	pd17_dmic_data2: pd17_dmic_data2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 17, 4)>;
+	};
+	/omit-if-no-ref/
+	pd17_pwm1: pd17_pwm1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 17, 5)>;
+	};
+	/omit-if-no-ref/
+	pd17_pd_eint17: pd17_pd_eint17 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 17, 14)>;
+	};
+	/omit-if-no-ref/
+	pd18_gpio_in: pd18_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 18, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd18_gpio_out: pd18_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 18, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd18_lcd0_clk: pd18_lcd0_clk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 18, 2)>;
+	};
+	/omit-if-no-ref/
+	pd18_lvds1_v3p: pd18_lvds1_v3p {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 18, 3)>;
+	};
+	/omit-if-no-ref/
+	pd18_dmic_data1: pd18_dmic_data1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 18, 4)>;
+	};
+	/omit-if-no-ref/
+	pd18_pwm2: pd18_pwm2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 18, 5)>;
+	};
+	/omit-if-no-ref/
+	pd18_pd_eint18: pd18_pd_eint18 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 18, 14)>;
+	};
+	/omit-if-no-ref/
+	pd19_gpio_in: pd19_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 19, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd19_gpio_out: pd19_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 19, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd19_lcd0_de: pd19_lcd0_de {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 19, 2)>;
+	};
+	/omit-if-no-ref/
+	pd19_lvds1_v3n: pd19_lvds1_v3n {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 19, 3)>;
+	};
+	/omit-if-no-ref/
+	pd19_dmic_data0: pd19_dmic_data0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 19, 4)>;
+	};
+	/omit-if-no-ref/
+	pd19_pwm3: pd19_pwm3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 19, 5)>;
+	};
+	/omit-if-no-ref/
+	pd19_pd_eint19: pd19_pd_eint19 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 19, 14)>;
+	};
+	/omit-if-no-ref/
+	pd20_gpio_in: pd20_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 20, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd20_gpio_out: pd20_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 20, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd20_lcd0_hsync: pd20_lcd0_hsync {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 20, 2)>;
+	};
+	/omit-if-no-ref/
+	pd20_twi2_sck: pd20_twi2_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 20, 3)>;
+	};
+	/omit-if-no-ref/
+	pd20_dmic_clk: pd20_dmic_clk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 20, 4)>;
+	};
+	/omit-if-no-ref/
+	pd20_pwm4: pd20_pwm4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 20, 5)>;
+	};
+	/omit-if-no-ref/
+	pd20_pd_eint20: pd20_pd_eint20 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 20, 14)>;
+	};
+	/omit-if-no-ref/
+	pd21_gpio_in: pd21_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 21, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd21_gpio_out: pd21_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 21, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd21_lcd0_vsync: pd21_lcd0_vsync {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 21, 2)>;
+	};
+	/omit-if-no-ref/
+	pd21_twi2_sda: pd21_twi2_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 21, 3)>;
+	};
+	/omit-if-no-ref/
+	pd21_uart1_tx: pd21_uart1_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 21, 4)>;
+	};
+	/omit-if-no-ref/
+	pd21_pwm5: pd21_pwm5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 21, 5)>;
+	};
+	/omit-if-no-ref/
+	pd21_pd_eint21: pd21_pd_eint21 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 21, 14)>;
+	};
+	/omit-if-no-ref/
+	pd22_gpio_in: pd22_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 22, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pd22_gpio_out: pd22_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 22, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pd22_owa_out: pd22_owa_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 22, 2)>;
+	};
+	/omit-if-no-ref/
+	pd22_ir_rx: pd22_ir_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 22, 3)>;
+	};
+	/omit-if-no-ref/
+	pd22_uart1_rx: pd22_uart1_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 22, 4)>;
+	};
+	/omit-if-no-ref/
+	pd22_pwm7: pd22_pwm7 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 22, 5)>;
+	};
+	/omit-if-no-ref/
+	pd22_pd_eint22: pd22_pd_eint22 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_D, 22, 14)>;
+	};
+	/omit-if-no-ref/
+	pe0_gpio_in: pe0_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 0, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe0_gpio_out: pe0_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 0, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe0_ncsi0_hsync: pe0_ncsi0_hsync {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 0, 2)>;
+	};
+	/omit-if-no-ref/
+	pe0_uart2_rts: pe0_uart2_rts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 0, 3)>;
+	};
+	/omit-if-no-ref/
+	pe0_twi1_sck: pe0_twi1_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 0, 4)>;
+	};
+	/omit-if-no-ref/
+	pe0_lcd0_hsync: pe0_lcd0_hsync {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 0, 5)>;
+	};
+	/omit-if-no-ref/
+	pe0_rgmii_rxd0: pe0_rgmii_rxd0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 0, 8)>;
+	};
+	/omit-if-no-ref/
+	pe0_rmii_crs_dv: pe0_rmii_crs_dv {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 0, 8)>;
+	};
+	/omit-if-no-ref/
+	pe0_pe_eint0: pe0_pe_eint0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 0, 14)>;
+	};
+	/omit-if-no-ref/
+	pe1_gpio_in: pe1_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 1, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe1_gpio_out: pe1_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 1, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe1_ncsi0_vsync: pe1_ncsi0_vsync {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 1, 2)>;
+	};
+	/omit-if-no-ref/
+	pe1_uart2_cts: pe1_uart2_cts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 1, 3)>;
+	};
+	/omit-if-no-ref/
+	pe1_twi1_sda: pe1_twi1_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 1, 4)>;
+	};
+	/omit-if-no-ref/
+	pe1_lcd0_vsync: pe1_lcd0_vsync {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 1, 5)>;
+	};
+	/omit-if-no-ref/
+	pe1_rgmii_rxd1: pe1_rgmii_rxd1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 1, 8)>;
+	};
+	/omit-if-no-ref/
+	pe1_rmii_rxd0: pe1_rmii_rxd0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 1, 8)>;
+	};
+	/omit-if-no-ref/
+	pe1_pe_eint1: pe1_pe_eint1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 1, 14)>;
+	};
+	/omit-if-no-ref/
+	pe2_gpio_in: pe2_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe2_gpio_out: pe2_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe2_ncsi0_pclk: pe2_ncsi0_pclk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, 2)>;
+	};
+	/omit-if-no-ref/
+	pe2_uart2_tx: pe2_uart2_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, 3)>;
+	};
+	/omit-if-no-ref/
+	pe2_twi0_sck: pe2_twi0_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, 4)>;
+	};
+	/omit-if-no-ref/
+	pe2_clk_fanout0: pe2_clk_fanout0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, 5)>;
+	};
+	/omit-if-no-ref/
+	pe2_uart0_tx: pe2_uart0_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, 6)>;
+	};
+	/omit-if-no-ref/
+	pe2_rgmii_txck: pe2_rgmii_txck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, 8)>;
+	};
+	/omit-if-no-ref/
+	pe2_rmii_rxd1: pe2_rmii_rxd1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, 8)>;
+	};
+	/omit-if-no-ref/
+	pe2_pe_eint2: pe2_pe_eint2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 2, 14)>;
+	};
+	/omit-if-no-ref/
+	pe3_gpio_in: pe3_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe3_gpio_out: pe3_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe3_ncsi0_mclk: pe3_ncsi0_mclk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, 2)>;
+	};
+	/omit-if-no-ref/
+	pe3_uart2_rx: pe3_uart2_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, 3)>;
+	};
+	/omit-if-no-ref/
+	pe3_twi0_sda: pe3_twi0_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, 4)>;
+	};
+	/omit-if-no-ref/
+	pe3_clk_fanout1: pe3_clk_fanout1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, 5)>;
+	};
+	/omit-if-no-ref/
+	pe3_uart0_rx: pe3_uart0_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, 6)>;
+	};
+	/omit-if-no-ref/
+	pe3_rgmii_txd0: pe3_rgmii_txd0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, 8)>;
+	};
+	/omit-if-no-ref/
+	pe3_rmii_txck: pe3_rmii_txck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, 8)>;
+	};
+	/omit-if-no-ref/
+	pe3_pe_eint3: pe3_pe_eint3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 3, 14)>;
+	};
+	/omit-if-no-ref/
+	pe4_gpio_in: pe4_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe4_gpio_out: pe4_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe4_ncsi0_d0: pe4_ncsi0_d0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, 2)>;
+	};
+	/omit-if-no-ref/
+	pe4_uart4_tx: pe4_uart4_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, 3)>;
+	};
+	/omit-if-no-ref/
+	pe4_twi2_sck: pe4_twi2_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, 4)>;
+	};
+	/omit-if-no-ref/
+	pe4_clk_fanout2: pe4_clk_fanout2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, 5)>;
+	};
+	/omit-if-no-ref/
+	pe4_r_jtag_ms: pe4_r_jtag_ms {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, 7)>;
+	};
+	/omit-if-no-ref/
+	pe4_rgmii_txd1: pe4_rgmii_txd1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, 8)>;
+	};
+	/omit-if-no-ref/
+	pe4_rmii_txd0: pe4_rmii_txd0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, 8)>;
+	};
+	/omit-if-no-ref/
+	pe4_pe_eint4: pe4_pe_eint4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 4, 14)>;
+	};
+	/omit-if-no-ref/
+	pe5_gpio_in: pe5_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe5_gpio_out: pe5_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe5_ncsi0_d1: pe5_ncsi0_d1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, 2)>;
+	};
+	/omit-if-no-ref/
+	pe5_uart4_rx: pe5_uart4_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, 3)>;
+	};
+	/omit-if-no-ref/
+	pe5_twi2_sda: pe5_twi2_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, 4)>;
+	};
+	/omit-if-no-ref/
+	pe5_ledc_do: pe5_ledc_do {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, 5)>;
+	};
+	/omit-if-no-ref/
+	pe5_r_jtag_di: pe5_r_jtag_di {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, 7)>;
+	};
+	/omit-if-no-ref/
+	pe5_rgmii_txctrl: pe5_rgmii_txctrl {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, 8)>;
+	};
+	/omit-if-no-ref/
+	pe5_rmii_txd1: pe5_rmii_txd1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, 8)>;
+	};
+	/omit-if-no-ref/
+	pe5_pe_eint5: pe5_pe_eint5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 5, 14)>;
+	};
+	/omit-if-no-ref/
+	pe6_gpio_in: pe6_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe6_gpio_out: pe6_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe6_ncsi0_d2: pe6_ncsi0_d2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, 2)>;
+	};
+	/omit-if-no-ref/
+	pe6_uart5_tx: pe6_uart5_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, 3)>;
+	};
+	/omit-if-no-ref/
+	pe6_twi3_sck: pe6_twi3_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, 4)>;
+	};
+	/omit-if-no-ref/
+	pe6_owa_in: pe6_owa_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, 5)>;
+	};
+	/omit-if-no-ref/
+	pe6_r_jtag_do: pe6_r_jtag_do {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, 7)>;
+	};
+	/omit-if-no-ref/
+	pe6_rgmii_clkin: pe6_rgmii_clkin {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, 8)>;
+	};
+	/omit-if-no-ref/
+	pe6_rmii_txen: pe6_rmii_txen {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, 8)>;
+	};
+	/omit-if-no-ref/
+	pe6_pe_eint6: pe6_pe_eint6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 6, 14)>;
+	};
+	/omit-if-no-ref/
+	pe7_gpio_in: pe7_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 7, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe7_gpio_out: pe7_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 7, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe7_ncsi0_d3: pe7_ncsi0_d3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 7, 2)>;
+	};
+	/omit-if-no-ref/
+	pe7_uart5_rx: pe7_uart5_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 7, 3)>;
+	};
+	/omit-if-no-ref/
+	pe7_twi3_sda: pe7_twi3_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 7, 4)>;
+	};
+	/omit-if-no-ref/
+	pe7_owa_out: pe7_owa_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 7, 5)>;
+	};
+	/omit-if-no-ref/
+	pe7_r_jtag_ck: pe7_r_jtag_ck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 7, 7)>;
+	};
+	/omit-if-no-ref/
+	pe7_rmii_rxer: pe7_rmii_rxer {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 7, 8)>;
+	};
+	/omit-if-no-ref/
+	pe7_pe_eint7: pe7_pe_eint7 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 7, 14)>;
+	};
+	/omit-if-no-ref/
+	pe8_gpio_in: pe8_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 8, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe8_gpio_out: pe8_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 8, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe8_ncsi0_d4: pe8_ncsi0_d4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 8, 2)>;
+	};
+	/omit-if-no-ref/
+	pe8_uart1_rts: pe8_uart1_rts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 8, 3)>;
+	};
+	/omit-if-no-ref/
+	pe8_pwm2: pe8_pwm2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 8, 4)>;
+	};
+	/omit-if-no-ref/
+	pe8_uart3_tx: pe8_uart3_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 8, 5)>;
+	};
+	/omit-if-no-ref/
+	pe8_mdc: pe8_mdc {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 8, 8)>;
+	};
+	/omit-if-no-ref/
+	pe8_pe_eint8: pe8_pe_eint8 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 8, 14)>;
+	};
+	/omit-if-no-ref/
+	pe9_gpio_in: pe9_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 9, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe9_gpio_out: pe9_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 9, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe9_ncsi0_d5: pe9_ncsi0_d5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 9, 2)>;
+	};
+	/omit-if-no-ref/
+	pe9_uart1_cts: pe9_uart1_cts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 9, 3)>;
+	};
+	/omit-if-no-ref/
+	pe9_pwm3: pe9_pwm3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 9, 4)>;
+	};
+	/omit-if-no-ref/
+	pe9_uart3_rx: pe9_uart3_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 9, 5)>;
+	};
+	/omit-if-no-ref/
+	pe9_mdio: pe9_mdio {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 9, 8)>;
+	};
+	/omit-if-no-ref/
+	pe9_pe_eint9: pe9_pe_eint9 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 9, 14)>;
+	};
+	/omit-if-no-ref/
+	pe10_gpio_in: pe10_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 10, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe10_gpio_out: pe10_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 10, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe10_ncsi0_d6: pe10_ncsi0_d6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 10, 2)>;
+	};
+	/omit-if-no-ref/
+	pe10_uart1_tx: pe10_uart1_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 10, 3)>;
+	};
+	/omit-if-no-ref/
+	pe10_pwm4: pe10_pwm4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 10, 4)>;
+	};
+	/omit-if-no-ref/
+	pe10_ir_rx: pe10_ir_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 10, 5)>;
+	};
+	/omit-if-no-ref/
+	pe10_ephy_25m: pe10_ephy_25m {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 10, 8)>;
+	};
+	/omit-if-no-ref/
+	pe10_pe_eint10: pe10_pe_eint10 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 10, 14)>;
+	};
+	/omit-if-no-ref/
+	pe11_gpio_in: pe11_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 11, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe11_gpio_out: pe11_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 11, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe11_ncsi0_d7: pe11_ncsi0_d7 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 11, 2)>;
+	};
+	/omit-if-no-ref/
+	pe11_uart1_rx: pe11_uart1_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 11, 3)>;
+	};
+	/omit-if-no-ref/
+	pe11_rgmii_txd2: pe11_rgmii_txd2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 11, 8)>;
+	};
+	/omit-if-no-ref/
+	pe11_pe_eint11: pe11_pe_eint11 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 11, 14)>;
+	};
+	/omit-if-no-ref/
+	pe12_gpio_in: pe12_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 12, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe12_gpio_out: pe12_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 12, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe12_twi2_sck: pe12_twi2_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 12, 2)>;
+	};
+	/omit-if-no-ref/
+	pe12_ncsi0_field: pe12_ncsi0_field {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 12, 3)>;
+	};
+	/omit-if-no-ref/
+	pe12_rgmii_txd3: pe12_rgmii_txd3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 12, 8)>;
+	};
+	/omit-if-no-ref/
+	pe12_pe_eint12: pe12_pe_eint12 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 12, 14)>;
+	};
+	/omit-if-no-ref/
+	pe13_gpio_in: pe13_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 13, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pe13_gpio_out: pe13_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 13, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pe13_twi2_sda: pe13_twi2_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 13, 2)>;
+	};
+	/omit-if-no-ref/
+	pe13_pwm5: pe13_pwm5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 13, 3)>;
+	};
+	/omit-if-no-ref/
+	pe13_dmic_data3: pe13_dmic_data3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 13, 6)>;
+	};
+	/omit-if-no-ref/
+	pe13_rgmii_rxd2: pe13_rgmii_rxd2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 13, 8)>;
+	};
+	/omit-if-no-ref/
+	pe13_pe_eint13: pe13_pe_eint13 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_E, 13, 14)>;
+	};
+	/omit-if-no-ref/
+	pf0_gpio_in: pf0_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 0, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pf0_gpio_out: pf0_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 0, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pf0_sdc0_d1: pf0_sdc0_d1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 0, 2)>;
+	};
+	/omit-if-no-ref/
+	pf0_r_jtag_ms: pf0_r_jtag_ms {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 0, 4)>;
+	};
+	/omit-if-no-ref/
+	pf0_i2s2_dout1: pf0_i2s2_dout1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 0, 5)>;
+	};
+	/omit-if-no-ref/
+	pf0_i2s2_din0: pf0_i2s2_din0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 0, 6)>;
+	};
+	/omit-if-no-ref/
+	pf0_pf_eint0: pf0_pf_eint0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 0, 14)>;
+	};
+	/omit-if-no-ref/
+	pf1_gpio_in: pf1_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 1, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pf1_gpio_out: pf1_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 1, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pf1_sdc0_d0: pf1_sdc0_d0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 1, 2)>;
+	};
+	/omit-if-no-ref/
+	pf1_r_jtag_di: pf1_r_jtag_di {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 1, 4)>;
+	};
+	/omit-if-no-ref/
+	pf1_i2s2_dout0: pf1_i2s2_dout0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 1, 5)>;
+	};
+	/omit-if-no-ref/
+	pf1_i2s2_din1: pf1_i2s2_din1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 1, 6)>;
+	};
+	/omit-if-no-ref/
+	pf1_pf_eint1: pf1_pf_eint1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 1, 14)>;
+	};
+	/omit-if-no-ref/
+	pf2_gpio_in: pf2_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 2, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pf2_gpio_out: pf2_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 2, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pf2_sdc0_clk: pf2_sdc0_clk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 2, 2)>;
+	};
+	/omit-if-no-ref/
+	pf2_uart0_tx: pf2_uart0_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 2, 3)>;
+	};
+	/omit-if-no-ref/
+	pf2_twi0_sck: pf2_twi0_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 2, 4)>;
+	};
+	/omit-if-no-ref/
+	pf2_ledc_do: pf2_ledc_do {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 2, 5)>;
+	};
+	/omit-if-no-ref/
+	pf2_owa_in: pf2_owa_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 2, 6)>;
+	};
+	/omit-if-no-ref/
+	pf2_pf_eint2: pf2_pf_eint2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 2, 14)>;
+	};
+	/omit-if-no-ref/
+	pf3_gpio_in: pf3_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 3, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pf3_gpio_out: pf3_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 3, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pf3_sdc0_cmd: pf3_sdc0_cmd {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 3, 2)>;
+	};
+	/omit-if-no-ref/
+	pf3_r_jtag_do: pf3_r_jtag_do {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 3, 4)>;
+	};
+	/omit-if-no-ref/
+	pf3_i2s2_bclk: pf3_i2s2_bclk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 3, 5)>;
+	};
+	/omit-if-no-ref/
+	pf3_pf_eint3: pf3_pf_eint3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 3, 14)>;
+	};
+	/omit-if-no-ref/
+	pf4_gpio_in: pf4_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 4, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pf4_gpio_out: pf4_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 4, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pf4_sdc0_d3: pf4_sdc0_d3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 4, 2)>;
+	};
+	/omit-if-no-ref/
+	pf4_uart0_rx: pf4_uart0_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 4, 3)>;
+	};
+	/omit-if-no-ref/
+	pf4_twi0_sda: pf4_twi0_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 4, 4)>;
+	};
+	/omit-if-no-ref/
+	pf4_pwm6: pf4_pwm6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 4, 5)>;
+	};
+	/omit-if-no-ref/
+	pf4_ir_tx: pf4_ir_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 4, 6)>;
+	};
+	/omit-if-no-ref/
+	pf4_pf_eint4: pf4_pf_eint4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 4, 14)>;
+	};
+	/omit-if-no-ref/
+	pf5_gpio_in: pf5_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 5, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pf5_gpio_out: pf5_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 5, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pf5_sdc0_d2: pf5_sdc0_d2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 5, 2)>;
+	};
+	/omit-if-no-ref/
+	pf5_r_jtag_ck: pf5_r_jtag_ck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 5, 4)>;
+	};
+	/omit-if-no-ref/
+	pf5_i2s2_lrck: pf5_i2s2_lrck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 5, 5)>;
+	};
+	/omit-if-no-ref/
+	pf5_pf_eint5: pf5_pf_eint5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 5, 14)>;
+	};
+	/omit-if-no-ref/
+	pf6_gpio_in: pf6_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 6, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pf6_gpio_out: pf6_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 6, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pf6_owa_out: pf6_owa_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 6, 3)>;
+	};
+	/omit-if-no-ref/
+	pf6_ir_rx: pf6_ir_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 6, 4)>;
+	};
+	/omit-if-no-ref/
+	pf6_i2s2_mclk: pf6_i2s2_mclk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 6, 5)>;
+	};
+	/omit-if-no-ref/
+	pf6_pwm5: pf6_pwm5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 6, 6)>;
+	};
+	/omit-if-no-ref/
+	pf6_pf_eint6: pf6_pf_eint6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_F, 6, 14)>;
+	};
+	/omit-if-no-ref/
+	pg0_gpio_in: pg0_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 0, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg0_gpio_out: pg0_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 0, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg0_sdc1_clk: pg0_sdc1_clk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 0, 2)>;
+	};
+	/omit-if-no-ref/
+	pg0_uart3_tx: pg0_uart3_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 0, 3)>;
+	};
+	/omit-if-no-ref/
+	pg0_rgmii_rxd0: pg0_rgmii_rxd0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 0, 4)>;
+	};
+	/omit-if-no-ref/
+	pg0_rmii_crs_dv: pg0_rmii_crs_dv {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 0, 4)>;
+	};
+	/omit-if-no-ref/
+	pg0_pwm7: pg0_pwm7 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 0, 5)>;
+	};
+	/omit-if-no-ref/
+	pg0_pg_eint0: pg0_pg_eint0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 0, 14)>;
+	};
+	/omit-if-no-ref/
+	pg1_gpio_in: pg1_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 1, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg1_gpio_out: pg1_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 1, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg1_sdc1_cmd: pg1_sdc1_cmd {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 1, 2)>;
+	};
+	/omit-if-no-ref/
+	pg1_uart3_rx: pg1_uart3_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 1, 3)>;
+	};
+	/omit-if-no-ref/
+	pg1_rgmii_rxd1: pg1_rgmii_rxd1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 1, 4)>;
+	};
+	/omit-if-no-ref/
+	pg1_rmii_rxd0: pg1_rmii_rxd0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 1, 4)>;
+	};
+	/omit-if-no-ref/
+	pg1_pwm6: pg1_pwm6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 1, 5)>;
+	};
+	/omit-if-no-ref/
+	pg1_pg_eint1: pg1_pg_eint1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 1, 14)>;
+	};
+	/omit-if-no-ref/
+	pg2_gpio_in: pg2_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 2, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg2_gpio_out: pg2_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 2, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg2_sdc1_d0: pg2_sdc1_d0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 2, 2)>;
+	};
+	/omit-if-no-ref/
+	pg2_uart3_rts: pg2_uart3_rts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 2, 3)>;
+	};
+	/omit-if-no-ref/
+	pg2_rgmii_txck: pg2_rgmii_txck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 2, 4)>;
+	};
+	/omit-if-no-ref/
+	pg2_rmii_rxd1: pg2_rmii_rxd1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 2, 4)>;
+	};
+	/omit-if-no-ref/
+	pg2_uart4_tx: pg2_uart4_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 2, 5)>;
+	};
+	/omit-if-no-ref/
+	pg2_pg_eint2: pg2_pg_eint2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 2, 14)>;
+	};
+	/omit-if-no-ref/
+	pg3_gpio_in: pg3_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 3, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg3_gpio_out: pg3_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 3, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg3_sdc1_d1: pg3_sdc1_d1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 3, 2)>;
+	};
+	/omit-if-no-ref/
+	pg3_uart3_cts: pg3_uart3_cts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 3, 3)>;
+	};
+	/omit-if-no-ref/
+	pg3_rgmii_txd0: pg3_rgmii_txd0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 3, 4)>;
+	};
+	/omit-if-no-ref/
+	pg3_rmii_txck: pg3_rmii_txck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 3, 4)>;
+	};
+	/omit-if-no-ref/
+	pg3_uart4_rx: pg3_uart4_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 3, 5)>;
+	};
+	/omit-if-no-ref/
+	pg3_pg_eint3: pg3_pg_eint3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 3, 14)>;
+	};
+	/omit-if-no-ref/
+	pg4_gpio_in: pg4_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 4, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg4_gpio_out: pg4_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 4, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg4_sdc1_d2: pg4_sdc1_d2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 4, 2)>;
+	};
+	/omit-if-no-ref/
+	pg4_uart5_tx: pg4_uart5_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 4, 3)>;
+	};
+	/omit-if-no-ref/
+	pg4_rgmii_txd1: pg4_rgmii_txd1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 4, 4)>;
+	};
+	/omit-if-no-ref/
+	pg4_rmii_txd0: pg4_rmii_txd0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 4, 4)>;
+	};
+	/omit-if-no-ref/
+	pg4_pwm5: pg4_pwm5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 4, 5)>;
+	};
+	/omit-if-no-ref/
+	pg4_pg_eint4: pg4_pg_eint4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 4, 14)>;
+	};
+	/omit-if-no-ref/
+	pg5_gpio_in: pg5_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 5, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg5_gpio_out: pg5_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 5, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg5_sdc1_d3: pg5_sdc1_d3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 5, 2)>;
+	};
+	/omit-if-no-ref/
+	pg5_uart5_rx: pg5_uart5_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 5, 3)>;
+	};
+	/omit-if-no-ref/
+	pg5_rmii_txd1: pg5_rmii_txd1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 5, 4)>;
+	};
+	/omit-if-no-ref/
+	pg5_pwm4: pg5_pwm4 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 5, 5)>;
+	};
+	/omit-if-no-ref/
+	pg5_pg_eint5: pg5_pg_eint5 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 5, 14)>;
+	};
+	/omit-if-no-ref/
+	pg6_gpio_in: pg6_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 6, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg6_gpio_out: pg6_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 6, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg6_uart1_tx: pg6_uart1_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 6, 2)>;
+	};
+	/omit-if-no-ref/
+	pg6_twi2_sck: pg6_twi2_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 6, 3)>;
+	};
+	/omit-if-no-ref/
+	pg6_rgmii_txd2: pg6_rgmii_txd2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 6, 4)>;
+	};
+	/omit-if-no-ref/
+	pg6_pwm1: pg6_pwm1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 6, 5)>;
+	};
+	/omit-if-no-ref/
+	pg6_pg_eint6: pg6_pg_eint6 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 6, 14)>;
+	};
+	/omit-if-no-ref/
+	pg7_gpio_in: pg7_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 7, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg7_gpio_out: pg7_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 7, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg7_uart1_rx: pg7_uart1_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 7, 2)>;
+	};
+	/omit-if-no-ref/
+	pg7_twi2_sda: pg7_twi2_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 7, 3)>;
+	};
+	/omit-if-no-ref/
+	pg7_rgmii_txd3: pg7_rgmii_txd3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 7, 4)>;
+	};
+	/omit-if-no-ref/
+	pg7_owa_in: pg7_owa_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 7, 5)>;
+	};
+	/omit-if-no-ref/
+	pg7_pg_eint7: pg7_pg_eint7 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 7, 14)>;
+	};
+	/omit-if-no-ref/
+	pg8_gpio_in: pg8_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 8, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg8_gpio_out: pg8_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 8, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg8_uart1_rts: pg8_uart1_rts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 8, 2)>;
+	};
+	/omit-if-no-ref/
+	pg8_twi1_sck: pg8_twi1_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 8, 3)>;
+	};
+	/omit-if-no-ref/
+	pg8_rgmii_rxd2: pg8_rgmii_rxd2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 8, 4)>;
+	};
+	/omit-if-no-ref/
+	pg8_uart3_tx: pg8_uart3_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 8, 5)>;
+	};
+	/omit-if-no-ref/
+	pg8_pg_eint8: pg8_pg_eint8 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 8, 14)>;
+	};
+	/omit-if-no-ref/
+	pg9_gpio_in: pg9_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 9, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg9_gpio_out: pg9_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 9, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg9_uart1_cts: pg9_uart1_cts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 9, 2)>;
+	};
+	/omit-if-no-ref/
+	pg9_twi1_sda: pg9_twi1_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 9, 3)>;
+	};
+	/omit-if-no-ref/
+	pg9_rgmii_rxd3: pg9_rgmii_rxd3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 9, 4)>;
+	};
+	/omit-if-no-ref/
+	pg9_uart3_rx: pg9_uart3_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 9, 5)>;
+	};
+	/omit-if-no-ref/
+	pg9_pg_eint9: pg9_pg_eint9 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 9, 14)>;
+	};
+	/omit-if-no-ref/
+	pg10_gpio_in: pg10_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 10, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg10_gpio_out: pg10_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 10, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg10_pwm3: pg10_pwm3 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 10, 2)>;
+	};
+	/omit-if-no-ref/
+	pg10_twi3_sck: pg10_twi3_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 10, 3)>;
+	};
+	/omit-if-no-ref/
+	pg10_rgmii_rxck: pg10_rgmii_rxck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 10, 4)>;
+	};
+	/omit-if-no-ref/
+	pg10_clk_fanout0: pg10_clk_fanout0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 10, 5)>;
+	};
+	/omit-if-no-ref/
+	pg10_ir_rx: pg10_ir_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 10, 6)>;
+	};
+	/omit-if-no-ref/
+	pg10_pg_eint10: pg10_pg_eint10 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 10, 14)>;
+	};
+	/omit-if-no-ref/
+	pg11_gpio_in: pg11_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 11, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg11_gpio_out: pg11_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 11, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg11_i2s1_mclk: pg11_i2s1_mclk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 11, 2)>;
+	};
+	/omit-if-no-ref/
+	pg11_twi3_sda: pg11_twi3_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 11, 3)>;
+	};
+	/omit-if-no-ref/
+	pg11_ephy_25m: pg11_ephy_25m {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 11, 4)>;
+	};
+	/omit-if-no-ref/
+	pg11_rgmii_txctrl: pg11_rgmii_txctrl {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 11, 4)>;
+	};
+	/omit-if-no-ref/
+	pg11_clk_fanout1: pg11_clk_fanout1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 11, 5)>;
+	};
+	/omit-if-no-ref/
+	pg11_tcon_trig: pg11_tcon_trig {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 11, 6)>;
+	};
+	/omit-if-no-ref/
+	pg11_pg_eint11: pg11_pg_eint11 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 11, 14)>;
+	};
+	/omit-if-no-ref/
+	pg12_gpio_in: pg12_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg12_gpio_out: pg12_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg12_i2s1_lrck: pg12_i2s1_lrck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, 2)>;
+	};
+	/omit-if-no-ref/
+	pg12_twi0_sck: pg12_twi0_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, 3)>;
+	};
+	/omit-if-no-ref/
+	pg12_rgmii_clkin: pg12_rgmii_clkin {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, 4)>;
+	};
+	/omit-if-no-ref/
+	pg12_rmii_txen: pg12_rmii_txen {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, 4)>;
+	};
+	/omit-if-no-ref/
+	pg12_clk_fanout2: pg12_clk_fanout2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, 5)>;
+	};
+	/omit-if-no-ref/
+	pg12_pwm0: pg12_pwm0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, 6)>;
+	};
+	/omit-if-no-ref/
+	pg12_uart1_tx: pg12_uart1_tx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, 7)>;
+	};
+	/omit-if-no-ref/
+	pg12_pg_eint12: pg12_pg_eint12 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 12, 14)>;
+	};
+	/omit-if-no-ref/
+	pg13_gpio_in: pg13_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 13, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg13_gpio_out: pg13_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 13, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg13_i2s1_bclk: pg13_i2s1_bclk {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 13, 2)>;
+	};
+	/omit-if-no-ref/
+	pg13_twi0_sda: pg13_twi0_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 13, 3)>;
+	};
+	/omit-if-no-ref/
+	pg13_rmii_rxer: pg13_rmii_rxer {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 13, 4)>;
+	};
+	/omit-if-no-ref/
+	pg13_pwm2: pg13_pwm2 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 13, 5)>;
+	};
+	/omit-if-no-ref/
+	pg13_ledc_do: pg13_ledc_do {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 13, 6)>;
+	};
+	/omit-if-no-ref/
+	pg13_uart1_rx: pg13_uart1_rx {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 13, 7)>;
+	};
+	/omit-if-no-ref/
+	pg13_pg_eint13: pg13_pg_eint13 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 13, 14)>;
+	};
+	/omit-if-no-ref/
+	pg14_gpio_in: pg14_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 14, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg14_gpio_out: pg14_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 14, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg14_i2s1_din0: pg14_i2s1_din0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 14, 2)>;
+	};
+	/omit-if-no-ref/
+	pg14_twi2_sck: pg14_twi2_sck {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 14, 3)>;
+	};
+	/omit-if-no-ref/
+	pg14_mdc: pg14_mdc {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 14, 4)>;
+	};
+	/omit-if-no-ref/
+	pg14_i2s1_dout1: pg14_i2s1_dout1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 14, 5)>;
+	};
+	/omit-if-no-ref/
+	pg14_spi0_wp: pg14_spi0_wp {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 14, 6)>;
+	};
+	/omit-if-no-ref/
+	pg14_uart1_rts: pg14_uart1_rts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 14, 7)>;
+	};
+	/omit-if-no-ref/
+	pg14_pg_eint14: pg14_pg_eint14 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 14, 14)>;
+	};
+	/omit-if-no-ref/
+	pg15_gpio_in: pg15_gpio_in {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 15, ALLWINNER_D1_FUNC_INPUT)>;
+	};
+	/omit-if-no-ref/
+	pg15_gpio_out: pg15_gpio_out {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 15, ALLWINNER_D1_FUNC_OUTPUT)>;
+	};
+	/omit-if-no-ref/
+	pg15_i2s1_dout0: pg15_i2s1_dout0 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 15, 2)>;
+	};
+	/omit-if-no-ref/
+	pg15_twi2_sda: pg15_twi2_sda {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 15, 3)>;
+	};
+	/omit-if-no-ref/
+	pg15_mdio: pg15_mdio {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 15, 4)>;
+	};
+	/omit-if-no-ref/
+	pg15_i2s1_din1: pg15_i2s1_din1 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 15, 5)>;
+	};
+	/omit-if-no-ref/
+	pg15_spi0_hold: pg15_spi0_hold {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 15, 6)>;
+	};
+	/omit-if-no-ref/
+	pg15_uart1_cts: pg15_uart1_cts {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 15, 7)>;
+	};
+	/omit-if-no-ref/
+	pg15_pg_eint15: pg15_pg_eint15 {
+		pinmux = <ALLWINNER_D1_PINMUX(ALLWINNER_D1_PORT_G, 15, 14)>;
+	};
+};

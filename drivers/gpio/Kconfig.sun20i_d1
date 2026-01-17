@@ -1,0 +1,12 @@
+# Allwinner sun20i D1 GPIO configuration options
+
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+config GPIO_SUN20I_D1
+	bool "Allwinner sun20i D1 GPIO driver"
+	default y
+	depends on DT_HAS_ALLWINNER_SUN20I_D1_GPIO_ENABLED
+	help
+	  Enable the GPIO driver for the sun20i D1 PIO block used by
+	  Allwinner D1/D1s (F133) SoCs.

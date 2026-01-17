@@ -1,0 +1,9 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+config PINCTRL_ALLWINNER_D1
+	bool "Allwinner D1s/F133 pinctrl driver"
+	depends on DT_HAS_ALLWINNER_SUN20I_D1_PINCTRL
+	select PINCTRL_STORE_REG
+	help
+	  Enable pinctrl driver for the Allwinner D1s/F133 PIO controller.

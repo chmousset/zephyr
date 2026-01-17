@@ -1,0 +1,14 @@
+# Copyright (c) 2025
+# SPDX-License-Identifier: Apache-2.0
+
+identifier: mangopi_mq1w
+name: MangoPi MQ1W
+type: mcu
+arch: riscv
+toolchain:
+  - zephyr
+vendor: widora
+supported:
+  - gpio
+  - uart
+ram: 65536

@@ -1,0 +1,6 @@
+board:
+  name: mangopi_mq1w
+  full_name: MangoPi MQ1W
+  vendor: widora
+  socs:
+    - name: d1s
