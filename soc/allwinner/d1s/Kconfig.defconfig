@@ -39,13 +39,13 @@ config NUM_2ND_LEVEL_AGGREGATORS
 config PLIC
 	default y
 
-config PINCTRL_ALLWINNER_D1
+config PINCTRL_SUN20I_D1
 	default y
 
-config CLOCK_CONTROL_ALLWINNER_D1
+config CLOCK_CONTROL_SUN20I_D1
 	default y
 
-config ALLWINNER_D1_TIMER
+config SUN20I_D1_TIMER
 	default y
 
 if SERIAL

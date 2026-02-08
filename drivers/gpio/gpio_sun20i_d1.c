@@ -21,28 +21,28 @@
 #define PIO_CFG_INPUT   0x0
 #define PIO_CFG_OUTPUT  0x1
 
-struct gpio_allwinner_d1_config {
+struct gpio_sun20i_d1_config {
 	/* gpio_driver_config must be first */
 	struct gpio_driver_config common;
 	uintptr_t base;
 };
 
-struct gpio_allwinner_d1_data {
+struct gpio_sun20i_d1_data {
 	/* gpio_driver_data must be first */
 	struct gpio_driver_data common;
 };
 
-static inline uintptr_t gpio_allwinner_d1_reg(const struct gpio_allwinner_d1_config *cfg,
+static inline uintptr_t gpio_sun20i_d1_reg(const struct gpio_sun20i_d1_config *cfg,
 					      uint32_t offset)
 {
 	return cfg->base + offset;
 }
 
-static int gpio_allwinner_d1_pin_configure(const struct device *dev,
+static int gpio_sun20i_d1_pin_configure(const struct device *dev,
 					   gpio_pin_t pin,
 					   gpio_flags_t flags)
 {
-	const struct gpio_allwinner_d1_config *cfg = dev->config;
+	const struct gpio_sun20i_d1_config *cfg = dev->config;
 	uint32_t pin_mask = BIT(pin);
 	uintptr_t reg;
 	uint32_t val;
@@ -84,7 +84,7 @@ static int gpio_allwinner_d1_pin_configure(const struct device *dev,
 	key = irq_lock();
 
 	if ((flags & GPIO_OUTPUT) != 0U) {
-		reg = gpio_allwinner_d1_reg(cfg, PIO_DAT_OFFSET);
+		reg = gpio_sun20i_d1_reg(cfg, PIO_DAT_OFFSET);
 		val = sys_read32(reg);
 
 		if ((flags & GPIO_OUTPUT_INIT_HIGH) != 0U) {
@@ -96,13 +96,13 @@ static int gpio_allwinner_d1_pin_configure(const struct device *dev,
 		sys_write32(val, reg);
 	}
 
-	reg = gpio_allwinner_d1_reg(cfg, PIO_CFG_OFFSET + ((pin / 8U) * 4U));
+	reg = gpio_sun20i_d1_reg(cfg, PIO_CFG_OFFSET + ((pin / 8U) * 4U));
 	shift = (pin % 8U) * 4U;
 	val = sys_read32(reg);
 	val = (val & ~(0xFU << shift)) | (func << shift);
 	sys_write32(val, reg);
 
-	reg = gpio_allwinner_d1_reg(cfg, PIO_PULL_OFFSET + ((pin / 16U) * 4U));
+	reg = gpio_sun20i_d1_reg(cfg, PIO_PULL_OFFSET + ((pin / 16U) * 4U));
 	shift = (pin % 16U) * 2U;
 	val = sys_read32(reg);
 	val = (val & ~(0x3U << shift)) | (pull << shift);
@@ -113,21 +113,21 @@ static int gpio_allwinner_d1_pin_configure(const struct device *dev,
 	return 0;
 }
 
-static int gpio_allwinner_d1_port_get_raw(const struct device *dev, uint32_t *value)
+static int gpio_sun20i_d1_port_get_raw(const struct device *dev, uint32_t *value)
 {
-	const struct gpio_allwinner_d1_config *cfg = dev->config;
+	const struct gpio_sun20i_d1_config *cfg = dev->config;
 
-	*value = sys_read32(gpio_allwinner_d1_reg(cfg, PIO_DAT_OFFSET)) &
+	*value = sys_read32(gpio_sun20i_d1_reg(cfg, PIO_DAT_OFFSET)) &
 		 cfg->common.port_pin_mask;
 	return 0;
 }
 
-static int gpio_allwinner_d1_port_set_masked_raw(const struct device *dev,
+static int gpio_sun20i_d1_port_set_masked_raw(const struct device *dev,
 						 uint32_t mask,
 						 uint32_t value)
 {
-	const struct gpio_allwinner_d1_config *cfg = dev->config;
-	uintptr_t reg = gpio_allwinner_d1_reg(cfg, PIO_DAT_OFFSET);
+	const struct gpio_sun20i_d1_config *cfg = dev->config;
+	uintptr_t reg = gpio_sun20i_d1_reg(cfg, PIO_DAT_OFFSET);
 	unsigned int key;
 	uint32_t val;
 
@@ -143,10 +143,10 @@ static int gpio_allwinner_d1_port_set_masked_raw(const struct device *dev,
 	return 0;
 }
 
-static int gpio_allwinner_d1_port_set_bits_raw(const struct device *dev, uint32_t mask)
+static int gpio_sun20i_d1_port_set_bits_raw(const struct device *dev, uint32_t mask)
 {
-	const struct gpio_allwinner_d1_config *cfg = dev->config;
-	uintptr_t reg = gpio_allwinner_d1_reg(cfg, PIO_DAT_OFFSET);
+	const struct gpio_sun20i_d1_config *cfg = dev->config;
+	uintptr_t reg = gpio_sun20i_d1_reg(cfg, PIO_DAT_OFFSET);
 	unsigned int key;
 	uint32_t val;
 
@@ -160,10 +160,10 @@ static int gpio_allwinner_d1_port_set_bits_raw(const struct device *dev, uint32_
 	return 0;
 }
 
-static int gpio_allwinner_d1_port_clear_bits_raw(const struct device *dev, uint32_t mask)
+static int gpio_sun20i_d1_port_clear_bits_raw(const struct device *dev, uint32_t mask)
 {
-	const struct gpio_allwinner_d1_config *cfg = dev->config;
-	uintptr_t reg = gpio_allwinner_d1_reg(cfg, PIO_DAT_OFFSET);
+	const struct gpio_sun20i_d1_config *cfg = dev->config;
+	uintptr_t reg = gpio_sun20i_d1_reg(cfg, PIO_DAT_OFFSET);
 	unsigned int key;
 	uint32_t val;
 
@@ -177,10 +177,10 @@ static int gpio_allwinner_d1_port_clear_bits_raw(const struct device *dev, uint3
 	return 0;
 }
 
-static int gpio_allwinner_d1_port_toggle_bits(const struct device *dev, uint32_t mask)
+static int gpio_sun20i_d1_port_toggle_bits(const struct device *dev, uint32_t mask)
 {
-	const struct gpio_allwinner_d1_config *cfg = dev->config;
-	uintptr_t reg = gpio_allwinner_d1_reg(cfg, PIO_DAT_OFFSET);
+	const struct gpio_sun20i_d1_config *cfg = dev->config;
+	uintptr_t reg = gpio_sun20i_d1_reg(cfg, PIO_DAT_OFFSET);
 	unsigned int key;
 	uint32_t val;
 
@@ -194,7 +194,7 @@ static int gpio_allwinner_d1_port_toggle_bits(const struct device *dev, uint32_t
 	return 0;
 }
 
-static int gpio_allwinner_d1_pin_interrupt_configure(const struct device *dev,
+static int gpio_sun20i_d1_pin_interrupt_configure(const struct device *dev,
 						     gpio_pin_t pin,
 						     enum gpio_int_mode mode,
 						     enum gpio_int_trig trig)
@@ -208,12 +208,12 @@ static int gpio_allwinner_d1_pin_interrupt_configure(const struct device *dev,
 }
 
 #ifdef CONFIG_GPIO_GET_DIRECTION
-static int gpio_allwinner_d1_port_get_direction(const struct device *dev,
+static int gpio_sun20i_d1_port_get_direction(const struct device *dev,
 						gpio_port_pins_t map,
 						gpio_port_pins_t *inputs,
 						gpio_port_pins_t *outputs)
 {
-	const struct gpio_allwinner_d1_config *cfg = dev->config;
+	const struct gpio_sun20i_d1_config *cfg = dev->config;
 	gpio_port_pins_t in_mask = 0U;
 	gpio_port_pins_t out_mask = 0U;
 	gpio_port_pins_t allowed = cfg->common.port_pin_mask & map;
@@ -227,7 +227,7 @@ static int gpio_allwinner_d1_port_get_direction(const struct device *dev,
 			continue;
 		}
 
-		reg = gpio_allwinner_d1_reg(cfg, PIO_CFG_OFFSET + ((pin / 8U) * 4U));
+		reg = gpio_sun20i_d1_reg(cfg, PIO_CFG_OFFSET + ((pin / 8U) * 4U));
 		shift = (pin % 8U) * 4U;
 		func = (sys_read32(reg) >> shift) & 0xFU;
 
@@ -249,29 +249,29 @@ static int gpio_allwinner_d1_port_get_direction(const struct device *dev,
 }
 #endif
 
-static DEVICE_API(gpio, gpio_allwinner_d1_api) = {
-	.pin_configure = gpio_allwinner_d1_pin_configure,
-	.port_get_raw = gpio_allwinner_d1_port_get_raw,
-	.port_set_masked_raw = gpio_allwinner_d1_port_set_masked_raw,
-	.port_set_bits_raw = gpio_allwinner_d1_port_set_bits_raw,
-	.port_clear_bits_raw = gpio_allwinner_d1_port_clear_bits_raw,
-	.port_toggle_bits = gpio_allwinner_d1_port_toggle_bits,
-	.pin_interrupt_configure = gpio_allwinner_d1_pin_interrupt_configure,
+static DEVICE_API(gpio, gpio_sun20i_d1_api) = {
+	.pin_configure = gpio_sun20i_d1_pin_configure,
+	.port_get_raw = gpio_sun20i_d1_port_get_raw,
+	.port_set_masked_raw = gpio_sun20i_d1_port_set_masked_raw,
+	.port_set_bits_raw = gpio_sun20i_d1_port_set_bits_raw,
+	.port_clear_bits_raw = gpio_sun20i_d1_port_clear_bits_raw,
+	.port_toggle_bits = gpio_sun20i_d1_port_toggle_bits,
+	.pin_interrupt_configure = gpio_sun20i_d1_pin_interrupt_configure,
 #ifdef CONFIG_GPIO_GET_DIRECTION
-	.port_get_direction = gpio_allwinner_d1_port_get_direction,
+	.port_get_direction = gpio_sun20i_d1_port_get_direction,
 #endif
 };
 
-static int gpio_allwinner_d1_init(const struct device *dev)
+static int gpio_sun20i_d1_init(const struct device *dev)
 {
 	ARG_UNUSED(dev);
 	return 0;
 }
 
 #define GPIO_SUN20I_D1_INIT(n)						\
-	static struct gpio_allwinner_d1_data gpio_allwinner_d1_data_##n;	\
+	static struct gpio_sun20i_d1_data gpio_sun20i_d1_data_##n;	\
 									\
-	static const struct gpio_allwinner_d1_config gpio_allwinner_d1_cfg_##n = { \
+	static const struct gpio_sun20i_d1_config gpio_sun20i_d1_cfg_##n = { \
 		.common = {						\
 			.port_pin_mask = GPIO_PORT_PIN_MASK_FROM_DT_INST(n), \
 		},							\
@@ -279,12 +279,12 @@ static int gpio_allwinner_d1_init(const struct device *dev)
 	};								\
 									\
 	DEVICE_DT_INST_DEFINE(n,					\
-			      gpio_allwinner_d1_init,			\
+			      gpio_sun20i_d1_init,			\
 			      NULL,					\
-			      &gpio_allwinner_d1_data_##n,		\
-			      &gpio_allwinner_d1_cfg_##n,		\
+			      &gpio_sun20i_d1_data_##n,		\
+			      &gpio_sun20i_d1_cfg_##n,		\
 			      PRE_KERNEL_1,				\
 			      CONFIG_GPIO_INIT_PRIORITY,		\
-			      &gpio_allwinner_d1_api);
+			      &gpio_sun20i_d1_api);
 
 DT_INST_FOREACH_STATUS_OKAY(GPIO_SUN20I_D1_INIT)

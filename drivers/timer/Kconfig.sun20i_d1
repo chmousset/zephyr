@@ -1,7 +1,7 @@
 # Copyright (c) 2025
 # SPDX-License-Identifier: Apache-2.0
 
-config ALLWINNER_D1_TIMER
+config SUN20I_D1_TIMER
 	bool "Allwinner D1s timer"
 	default y
 	depends on DT_HAS_ALLWINNER_SUN20I_D1_TIMER_ENABLED

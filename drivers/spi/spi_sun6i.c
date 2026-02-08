@@ -62,7 +62,7 @@ LOG_MODULE_REGISTER(spi_sun6i, CONFIG_SPI_LOG_LEVEL);
 #define SPI_XCH_TIMEOUT 100000U
 #define SPI_RX_TIMEOUT  100000U
 
-struct spi_allwinner_d1_config {
+struct spi_sun6i_config {
 	uintptr_t base;
 	const struct pinctrl_dev_config *pcfg;
 	const struct device *clock_dev;
@@ -70,57 +70,57 @@ struct spi_allwinner_d1_config {
 	size_t num_clocks;
 };
 
-struct spi_allwinner_d1_data {
+struct spi_sun6i_data {
 	struct spi_context ctx;
 	uint32_t mod_clk_rate;
 };
 
-static inline uint32_t spi_allwinner_d1_read(const struct spi_allwinner_d1_config *cfg,
+static inline uint32_t spi_sun6i_read(const struct spi_sun6i_config *cfg,
 					     uint32_t reg)
 {
 	return sys_read32(cfg->base + reg);
 }
 
-static inline void spi_allwinner_d1_write(const struct spi_allwinner_d1_config *cfg,
+static inline void spi_sun6i_write(const struct spi_sun6i_config *cfg,
 					  uint32_t reg, uint32_t val)
 {
 	sys_write32(val, cfg->base + reg);
 }
 
-static void spi_allwinner_d1_dump_regs(const struct device *dev)
+static void spi_sun6i_dump_regs(const struct device *dev)
 {
-	const struct spi_allwinner_d1_config *cfg = dev->config;
+	const struct spi_sun6i_config *cfg = dev->config;
 
 	LOG_ERR("%s: GCR=0x%08x TCR=0x%08x FCR=0x%08x FSR=0x%08x ISR=0x%08x CCR=0x%08x",
 		dev->name,
-		spi_allwinner_d1_read(cfg, SPI_GCR),
-		spi_allwinner_d1_read(cfg, SPI_TCR),
-		spi_allwinner_d1_read(cfg, SPI_FCR),
-		spi_allwinner_d1_read(cfg, SPI_FSR),
-		spi_allwinner_d1_read(cfg, SPI_ISR),
-		spi_allwinner_d1_read(cfg, SPI_CCR));
+		spi_sun6i_read(cfg, SPI_GCR),
+		spi_sun6i_read(cfg, SPI_TCR),
+		spi_sun6i_read(cfg, SPI_FCR),
+		spi_sun6i_read(cfg, SPI_FSR),
+		spi_sun6i_read(cfg, SPI_ISR),
+		spi_sun6i_read(cfg, SPI_CCR));
 	LOG_ERR("%s: MBC=0x%08x MTC=0x%08x BCC=0x%08x",
 		dev->name,
-		spi_allwinner_d1_read(cfg, SPI_MBC),
-		spi_allwinner_d1_read(cfg, SPI_MTC),
-		spi_allwinner_d1_read(cfg, SPI_BCC));
+		spi_sun6i_read(cfg, SPI_MBC),
+		spi_sun6i_read(cfg, SPI_MTC),
+		spi_sun6i_read(cfg, SPI_BCC));
 }
 
-static void spi_allwinner_d1_reset_fifos(const struct spi_allwinner_d1_config *cfg)
+static void spi_sun6i_reset_fifos(const struct spi_sun6i_config *cfg)
 {
-	uint32_t val = spi_allwinner_d1_read(cfg, SPI_FCR);
+	uint32_t val = spi_sun6i_read(cfg, SPI_FCR);
 
 	val |= SPI_FCR_TX_RST | SPI_FCR_RX_RST;
-	spi_allwinner_d1_write(cfg, SPI_FCR, val);
+	spi_sun6i_write(cfg, SPI_FCR, val);
 }
 
-static void spi_allwinner_d1_set_cs_level(const struct device *dev, bool active)
+static void spi_sun6i_set_cs_level(const struct device *dev, bool active)
 {
-	struct spi_allwinner_d1_data *data = dev->data;
-	const struct spi_allwinner_d1_config *cfg = dev->config;
+	struct spi_sun6i_data *data = dev->data;
+	const struct spi_sun6i_config *cfg = dev->config;
 	const struct spi_config *config = data->ctx.config;
 	bool active_low = (config->operation & SPI_CS_ACTIVE_HIGH) == 0U;
-	uint32_t tcr = spi_allwinner_d1_read(cfg, SPI_TCR);
+	uint32_t tcr = spi_sun6i_read(cfg, SPI_TCR);
 	bool level = active_low ? !active : active;
 
 	if (level) {
@@ -129,14 +129,14 @@ static void spi_allwinner_d1_set_cs_level(const struct device *dev, bool active)
 		tcr &= ~SPI_TCR_SS_LEVEL;
 	}
 
-	spi_allwinner_d1_write(cfg, SPI_TCR, tcr);
+	spi_sun6i_write(cfg, SPI_TCR, tcr);
 
 	if (config->cs.delay != 0U) {
 		k_busy_wait(config->cs.delay);
 	}
 }
 
-static int spi_allwinner_d1_calc_clk(uint32_t input_clk, uint32_t freq,
+static int spi_sun6i_calc_clk(uint32_t input_clk, uint32_t freq,
 				     uint32_t *ccr_out)
 {
 	uint32_t best_rate = 0U;
@@ -189,11 +189,11 @@ static int spi_allwinner_d1_calc_clk(uint32_t input_clk, uint32_t freq,
 	return 0;
 }
 
-static int spi_allwinner_d1_configure(const struct device *dev,
+static int spi_sun6i_configure(const struct device *dev,
 				      const struct spi_config *config)
 {
-	struct spi_allwinner_d1_data *data = dev->data;
-	const struct spi_allwinner_d1_config *cfg = dev->config;
+	struct spi_sun6i_data *data = dev->data;
+	const struct spi_sun6i_config *cfg = dev->config;
 	uint32_t tcr;
 	uint32_t ccr;
 
@@ -222,12 +222,12 @@ static int spi_allwinner_d1_configure(const struct device *dev,
 
 	data->ctx.config = config;
 
-	if (spi_allwinner_d1_calc_clk(data->mod_clk_rate, config->frequency, &ccr) == 0) {
+	if (spi_sun6i_calc_clk(data->mod_clk_rate, config->frequency, &ccr) == 0) {
 		LOG_DBG("%s: mod_clk=%uHz ccr=0x%08x", dev->name, data->mod_clk_rate, ccr);
-		spi_allwinner_d1_write(cfg, SPI_CCR, ccr);
+		spi_sun6i_write(cfg, SPI_CCR, ccr);
 	}
 
-	tcr = spi_allwinner_d1_read(cfg, SPI_TCR);
+	tcr = spi_sun6i_read(cfg, SPI_TCR);
 	tcr &= ~(SPI_TCR_CPHA | SPI_TCR_CPOL | SPI_TCR_SPOL | SPI_TCR_FBS |
 		 (0x3U << SPI_TCR_SS_SEL_SHIFT));
 
@@ -248,15 +248,15 @@ static int spi_allwinner_d1_configure(const struct device *dev,
 	tcr |= (config->slave << SPI_TCR_SS_SEL_SHIFT);
 	tcr |= SPI_TCR_SS_LEVEL;
 
-	spi_allwinner_d1_write(cfg, SPI_TCR, tcr);
+	spi_sun6i_write(cfg, SPI_TCR, tcr);
 
 	return 0;
 }
 
-static int spi_allwinner_d1_transfer(const struct device *dev)
+static int spi_sun6i_transfer(const struct device *dev)
 {
-	struct spi_allwinner_d1_data *data = dev->data;
-	const struct spi_allwinner_d1_config *cfg = dev->config;
+	struct spi_sun6i_data *data = dev->data;
+	const struct spi_sun6i_config *cfg = dev->config;
 	struct spi_context *ctx = &data->ctx;
 	int ret = 0;
 
@@ -272,10 +272,10 @@ static int spi_allwinner_d1_transfer(const struct device *dev)
 		size_t len = MAX(tx_left, rx_left);
 		size_t chunk = MIN(len, SPI_FIFO_DEPTH);
 
-		spi_allwinner_d1_reset_fifos(cfg);
-		spi_allwinner_d1_write(cfg, SPI_MBC, chunk);
-		spi_allwinner_d1_write(cfg, SPI_MTC, chunk);
-		spi_allwinner_d1_write(cfg, SPI_BCC, chunk);
+		spi_sun6i_reset_fifos(cfg);
+		spi_sun6i_write(cfg, SPI_MBC, chunk);
+		spi_sun6i_write(cfg, SPI_MTC, chunk);
+		spi_sun6i_write(cfg, SPI_BCC, chunk);
 
 		for (size_t i = 0U; i < chunk; i++) {
 			uint8_t val = 0xFF;
@@ -288,30 +288,30 @@ static int spi_allwinner_d1_transfer(const struct device *dev)
 			sys_write8(val, cfg->base + SPI_TXD);
 		}
 
-		spi_allwinner_d1_write(cfg, SPI_TCR,
-				       spi_allwinner_d1_read(cfg, SPI_TCR) | SPI_TCR_XCH);
+		spi_sun6i_write(cfg, SPI_TCR,
+				       spi_sun6i_read(cfg, SPI_TCR) | SPI_TCR_XCH);
 
 		for (uint32_t wait = 0U; wait < SPI_XCH_TIMEOUT; wait++) {
-			if ((spi_allwinner_d1_read(cfg, SPI_TCR) & SPI_TCR_XCH) == 0U) {
+			if ((spi_sun6i_read(cfg, SPI_TCR) & SPI_TCR_XCH) == 0U) {
 				break;
 			}
 			if (wait == (SPI_XCH_TIMEOUT - 1U)) {
 				LOG_ERR("%s: XCH timeout", dev->name);
-				spi_allwinner_d1_dump_regs(dev);
+				spi_sun6i_dump_regs(dev);
 				spi_context_complete(ctx, dev, -EIO);
 				return -EIO;
 			}
 		}
 
 		for (uint32_t wait = 0U; wait < SPI_RX_TIMEOUT; wait++) {
-			if (((spi_allwinner_d1_read(cfg, SPI_FSR)) & SPI_FSR_RX_CNT_MASK) >=
+			if (((spi_sun6i_read(cfg, SPI_FSR)) & SPI_FSR_RX_CNT_MASK) >=
 			    chunk) {
 				break;
 			}
 			if (wait == (SPI_RX_TIMEOUT - 1U)) {
 				LOG_ERR("%s: RX timeout FSR=0x%08x", dev->name,
-					spi_allwinner_d1_read(cfg, SPI_FSR));
-				spi_allwinner_d1_dump_regs(dev);
+					spi_sun6i_read(cfg, SPI_FSR));
+				spi_sun6i_dump_regs(dev);
 				spi_context_complete(ctx, dev, -EIO);
 				return -EIO;
 			}
@@ -331,17 +331,17 @@ static int spi_allwinner_d1_transfer(const struct device *dev)
 	return ret;
 }
 
-static int spi_allwinner_d1_transceive(const struct device *dev,
+static int spi_sun6i_transceive(const struct device *dev,
 				       const struct spi_config *config,
 				       const struct spi_buf_set *tx_bufs,
 				       const struct spi_buf_set *rx_bufs)
 {
-	struct spi_allwinner_d1_data *data = dev->data;
+	struct spi_sun6i_data *data = dev->data;
 	int ret;
 
 	spi_context_lock(&data->ctx, false, NULL, NULL, config);
 
-	ret = spi_allwinner_d1_configure(dev, config);
+	ret = spi_sun6i_configure(dev, config);
 	if (ret != 0) {
 		spi_context_release(&data->ctx, ret);
 		return ret;
@@ -352,16 +352,16 @@ static int spi_allwinner_d1_transceive(const struct device *dev,
 	if (spi_cs_is_gpio(config)) {
 		spi_context_cs_control(&data->ctx, true);
 	} else {
-		spi_allwinner_d1_set_cs_level(dev, true);
+		spi_sun6i_set_cs_level(dev, true);
 	}
 
-	ret = spi_allwinner_d1_transfer(dev);
+	ret = spi_sun6i_transfer(dev);
 
 	if (spi_cs_is_gpio(config)) {
 		spi_context_cs_control(&data->ctx, false);
 	} else {
 		if ((config->operation & SPI_HOLD_ON_CS) == 0U) {
-			spi_allwinner_d1_set_cs_level(dev, false);
+			spi_sun6i_set_cs_level(dev, false);
 		}
 	}
 
@@ -372,7 +372,7 @@ static int spi_allwinner_d1_transceive(const struct device *dev,
 }
 
 #ifdef CONFIG_SPI_ASYNC
-static int spi_allwinner_d1_transceive_async(const struct device *dev,
+static int spi_sun6i_transceive_async(const struct device *dev,
 					     const struct spi_config *config,
 					     const struct spi_buf_set *tx_bufs,
 					     const struct spi_buf_set *rx_bufs,
@@ -390,20 +390,20 @@ static int spi_allwinner_d1_transceive_async(const struct device *dev,
 }
 #endif
 
-static int spi_allwinner_d1_release(const struct device *dev,
+static int spi_sun6i_release(const struct device *dev,
 				    const struct spi_config *config)
 {
 	ARG_UNUSED(config);
-	struct spi_allwinner_d1_data *data = dev->data;
+	struct spi_sun6i_data *data = dev->data;
 
 	spi_context_unlock_unconditionally(&data->ctx);
 	return 0;
 }
 
-static int spi_allwinner_d1_init(const struct device *dev)
+static int spi_sun6i_init(const struct device *dev)
 {
-	const struct spi_allwinner_d1_config *cfg = dev->config;
-	struct spi_allwinner_d1_data *data = dev->data;
+	const struct spi_sun6i_config *cfg = dev->config;
+	struct spi_sun6i_data *data = dev->data;
 	uint32_t val;
 	int ret;
 	uint32_t timeout;
@@ -462,12 +462,12 @@ static int spi_allwinner_d1_init(const struct device *dev)
 	}
 
 	/* Soft-reset the SPI controller. */
-	spi_allwinner_d1_write(cfg, SPI_GCR, 0U);
+	spi_sun6i_write(cfg, SPI_GCR, 0U);
 	k_busy_wait(1);
 	val = SPI_GCR_EN | SPI_GCR_MODE | SPI_GCR_TP_EN;
-	spi_allwinner_d1_write(cfg, SPI_GCR, val);
+	spi_sun6i_write(cfg, SPI_GCR, val);
 	for (timeout = 0U; timeout < 100000U; timeout++) {
-		if ((spi_allwinner_d1_read(cfg, SPI_GCR) & SPI_GCR_SRST) == 0U) {
+		if ((spi_sun6i_read(cfg, SPI_GCR) & SPI_GCR_SRST) == 0U) {
 			break;
 		}
 	}
@@ -476,10 +476,10 @@ static int spi_allwinner_d1_init(const struct device *dev)
 	}
 
 	/* Manual chip-select mode, CS deasserted. */
-	spi_allwinner_d1_write(cfg, SPI_TCR, SPI_TCR_SS_OWNER | SPI_TCR_SS_LEVEL);
+	spi_sun6i_write(cfg, SPI_TCR, SPI_TCR_SS_OWNER | SPI_TCR_SS_LEVEL);
 
-	spi_allwinner_d1_reset_fifos(cfg);
-	spi_allwinner_d1_write(cfg, SPI_IER, 0U);
+	spi_sun6i_reset_fifos(cfg);
+	spi_sun6i_write(cfg, SPI_IER, 0U);
 
 	ret = spi_context_cs_configure_all(&data->ctx);
 	if (ret != 0) {
@@ -492,27 +492,27 @@ static int spi_allwinner_d1_init(const struct device *dev)
 	return 0;
 }
 
-static DEVICE_API(spi, spi_allwinner_d1_api) = {
-	.transceive = spi_allwinner_d1_transceive,
+static DEVICE_API(spi, spi_sun6i_api) = {
+	.transceive = spi_sun6i_transceive,
 #ifdef CONFIG_SPI_ASYNC
-	.transceive_async = spi_allwinner_d1_transceive_async,
+	.transceive_async = spi_sun6i_transceive_async,
 #endif
 #ifdef CONFIG_SPI_RTIO
 	.iodev_submit = spi_rtio_iodev_default_submit,
 #endif
-	.release = spi_allwinner_d1_release,
+	.release = spi_sun6i_release,
 };
 
 #define SPI_SUN6I_INIT(n)							\
 	PINCTRL_DT_INST_DEFINE(n);						\
 										\
-	static struct spi_allwinner_d1_data spi_allwinner_d1_data_##n = {	\
-		SPI_CONTEXT_INIT_LOCK(spi_allwinner_d1_data_##n, ctx),		\
-		SPI_CONTEXT_INIT_SYNC(spi_allwinner_d1_data_##n, ctx),		\
+	static struct spi_sun6i_data spi_sun6i_data_##n = {	\
+		SPI_CONTEXT_INIT_LOCK(spi_sun6i_data_##n, ctx),		\
+		SPI_CONTEXT_INIT_SYNC(spi_sun6i_data_##n, ctx),		\
 		SPI_CONTEXT_CS_GPIOS_INITIALIZE(DT_DRV_INST(n), ctx)		\
 	};									\
 										\
-	static const struct spi_allwinner_d1_config spi_allwinner_d1_cfg_##n = { \
+	static const struct spi_sun6i_config spi_sun6i_cfg_##n = { \
 		.base = DT_INST_REG_ADDR(n),					\
 		.pcfg = PINCTRL_DT_INST_DEV_CONFIG_GET(n),			\
 		.clock_dev = DEVICE_DT_GET(DT_INST_CLOCKS_CTLR(n)),		\
@@ -527,11 +527,11 @@ static DEVICE_API(spi, spi_allwinner_d1_api) = {
 		.num_clocks = DT_INST_NUM_CLOCKS(n),				\
 	};									\
 										\
-	SPI_DEVICE_DT_INST_DEFINE(n, spi_allwinner_d1_init, NULL,		\
-				  &spi_allwinner_d1_data_##n,			\
-				  &spi_allwinner_d1_cfg_##n,			\
+	SPI_DEVICE_DT_INST_DEFINE(n, spi_sun6i_init, NULL,		\
+				  &spi_sun6i_data_##n,			\
+				  &spi_sun6i_cfg_##n,			\
 				  POST_KERNEL,					\
 				  CONFIG_SPI_INIT_PRIORITY,			\
-				  &spi_allwinner_d1_api);
+				  &spi_sun6i_api);
 
 DT_INST_FOREACH_STATUS_OKAY(SPI_SUN6I_INIT)

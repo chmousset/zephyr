@@ -1,7 +1,7 @@
 # Copyright (c) 2025
 # SPDX-License-Identifier: Apache-2.0
 
-config CLOCK_CONTROL_ALLWINNER_D1
+config CLOCK_CONTROL_SUN20I_D1
 	bool "Allwinner D1s/F133 CCU driver"
 	depends on DT_HAS_ALLWINNER_SUN20I_D1_CCU
 	help

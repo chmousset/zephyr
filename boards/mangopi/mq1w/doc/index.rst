@@ -66,9 +66,13 @@ References
 * `MangoPi MQ1W product page`_
 * `Allwinner BROM documentation`_
 * `eGON.BT0 documentation`_
+* `Allwinner SoC IP cores`_ — documents which peripheral IP blocks are shared
+  across Allwinner SoC generations; used to determine driver naming conventions
+  (e.g. ``sun6i`` for SPI/I2C shared IP vs ``sun20i_d1`` for D1-specific blocks)
 * `xfel`_
 
 .. _MangoPi MQ1W product page: https://mangopi.org/mangopi_mq
 .. _Allwinner BROM documentation: https://linux-sunxi.org/BROM
 .. _eGON.BT0 documentation: https://linux-sunxi.org/EGON
+.. _Allwinner SoC IP cores: https://linux-sunxi.org/Used_IP_cores
 .. _xfel: https://github.com/xboot/xfel

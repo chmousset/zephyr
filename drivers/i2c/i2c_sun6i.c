@@ -50,7 +50,7 @@ LOG_MODULE_REGISTER(i2c_sun6i, CONFIG_I2C_LOG_LEVEL);
 
 #define TWI_TIMEOUT_US 1000000U
 
-struct i2c_allwinner_d1_config {
+struct i2c_sun6i_config {
 	uintptr_t base;
 	const struct pinctrl_dev_config *pcfg;
 	const struct device *clock_dev;
@@ -59,23 +59,23 @@ struct i2c_allwinner_d1_config {
 	uint32_t bus_freq;
 };
 
-struct i2c_allwinner_d1_data {
+struct i2c_sun6i_data {
 	uint32_t bus_freq;
 	uint32_t input_clk;
 };
 
-static inline uint32_t twi_read(const struct i2c_allwinner_d1_config *cfg, uint32_t reg)
+static inline uint32_t twi_read(const struct i2c_sun6i_config *cfg, uint32_t reg)
 {
 	return sys_read32(cfg->base + reg);
 }
 
-static inline void twi_write(const struct i2c_allwinner_d1_config *cfg,
+static inline void twi_write(const struct i2c_sun6i_config *cfg,
 			     uint32_t reg, uint32_t val)
 {
 	sys_write32(val, cfg->base + reg);
 }
 
-static void twi_write_cntr(const struct i2c_allwinner_d1_config *cfg,
+static void twi_write_cntr(const struct i2c_sun6i_config *cfg,
 			   bool ack, bool start, bool stop)
 {
 	uint32_t cntr = TWI_CNTR_INT_EN | TWI_CNTR_BUS_EN | TWI_CNTR_INT_FLAG;
@@ -93,7 +93,7 @@ static void twi_write_cntr(const struct i2c_allwinner_d1_config *cfg,
 	twi_write(cfg, TWI_CNTR, cntr);
 }
 
-static int twi_wait_irq(const struct i2c_allwinner_d1_config *cfg)
+static int twi_wait_irq(const struct i2c_sun6i_config *cfg)
 {
 	uint32_t timeout = TWI_TIMEOUT_US;
 
@@ -107,7 +107,7 @@ static int twi_wait_irq(const struct i2c_allwinner_d1_config *cfg)
 	return -ETIMEDOUT;
 }
 
-static int twi_send_start(const struct i2c_allwinner_d1_config *cfg)
+static int twi_send_start(const struct i2c_sun6i_config *cfg)
 {
 	twi_write_cntr(cfg, true, true, false);
 	if (twi_wait_irq(cfg) != 0) {
@@ -123,7 +123,7 @@ static int twi_send_start(const struct i2c_allwinner_d1_config *cfg)
 	}
 }
 
-static void twi_send_stop(const struct i2c_allwinner_d1_config *cfg)
+static void twi_send_stop(const struct i2c_sun6i_config *cfg)
 {
 	uint32_t timeout = TWI_TIMEOUT_US;
 
@@ -137,7 +137,7 @@ static void twi_send_stop(const struct i2c_allwinner_d1_config *cfg)
 	}
 }
 
-static int twi_send_addr(const struct i2c_allwinner_d1_config *cfg,
+static int twi_send_addr(const struct i2c_sun6i_config *cfg,
 			 uint16_t addr, bool read)
 {
 	uint8_t status;
@@ -163,7 +163,7 @@ static int twi_send_addr(const struct i2c_allwinner_d1_config *cfg,
 	return -EIO;
 }
 
-static int twi_write_data(const struct i2c_allwinner_d1_config *cfg,
+static int twi_write_data(const struct i2c_sun6i_config *cfg,
 			  const uint8_t *buf, size_t len)
 {
 	for (size_t i = 0U; i < len; i++) {
@@ -190,7 +190,7 @@ static int twi_write_data(const struct i2c_allwinner_d1_config *cfg,
 	return 0;
 }
 
-static int twi_read_data(const struct i2c_allwinner_d1_config *cfg,
+static int twi_read_data(const struct i2c_sun6i_config *cfg,
 			 uint8_t *buf, size_t len)
 {
 	for (size_t i = 0U; i < len; i++) {
@@ -240,10 +240,10 @@ static uint32_t twi_calc_ccr(uint32_t input_clk, uint32_t bus_freq)
 	return (best_m << 3) | best_n;
 }
 
-static int i2c_allwinner_d1_configure(const struct device *dev, uint32_t dev_config)
+static int i2c_sun6i_configure(const struct device *dev, uint32_t dev_config)
 {
-	const struct i2c_allwinner_d1_config *cfg = dev->config;
-	struct i2c_allwinner_d1_data *data = dev->data;
+	const struct i2c_sun6i_config *cfg = dev->config;
+	struct i2c_sun6i_data *data = dev->data;
 	uint32_t bus_freq;
 
 	if ((dev_config & I2C_MODE_CONTROLLER) == 0U) {
@@ -275,12 +275,12 @@ static int i2c_allwinner_d1_configure(const struct device *dev, uint32_t dev_con
 	return 0;
 }
 
-static int i2c_allwinner_d1_transfer(const struct device *dev,
+static int i2c_sun6i_transfer(const struct device *dev,
 				     struct i2c_msg *msgs,
 				     uint8_t num_msgs,
 				     uint16_t addr)
 {
-	const struct i2c_allwinner_d1_config *cfg = dev->config;
+	const struct i2c_sun6i_config *cfg = dev->config;
 	int ret = 0;
 
 	i2c_dump_msgs(dev, msgs, num_msgs, addr);
@@ -325,10 +325,10 @@ out_stop:
 	return ret;
 }
 
-static int i2c_allwinner_d1_init(const struct device *dev)
+static int i2c_sun6i_init(const struct device *dev)
 {
-	const struct i2c_allwinner_d1_config *cfg = dev->config;
-	struct i2c_allwinner_d1_data *data = dev->data;
+	const struct i2c_sun6i_config *cfg = dev->config;
+	struct i2c_sun6i_data *data = dev->data;
 	uint32_t dev_config;
 	int ret;
 
@@ -363,12 +363,12 @@ static int i2c_allwinner_d1_init(const struct device *dev)
 	dev_config = I2C_MODE_CONTROLLER |
 		     i2c_map_dt_bitrate(cfg->bus_freq);
 
-	return i2c_allwinner_d1_configure(dev, dev_config);
+	return i2c_sun6i_configure(dev, dev_config);
 }
 
-static DEVICE_API(i2c, i2c_allwinner_d1_api) = {
-	.configure = i2c_allwinner_d1_configure,
-	.transfer = i2c_allwinner_d1_transfer,
+static DEVICE_API(i2c, i2c_sun6i_api) = {
+	.configure = i2c_sun6i_configure,
+	.transfer = i2c_sun6i_transfer,
 #ifdef CONFIG_I2C_RTIO
 	.iodev_submit = i2c_iodev_submit_fallback,
 #endif
@@ -377,9 +377,9 @@ static DEVICE_API(i2c, i2c_allwinner_d1_api) = {
 #define I2C_SUN6I_INIT(n)								\
 	PINCTRL_DT_INST_DEFINE(n);							\
 										\
-	static struct i2c_allwinner_d1_data i2c_allwinner_d1_data_##n;		\
+	static struct i2c_sun6i_data i2c_sun6i_data_##n;		\
 										\
-	static const struct i2c_allwinner_d1_config i2c_allwinner_d1_cfg_##n = {	\
+	static const struct i2c_sun6i_config i2c_sun6i_cfg_##n = {	\
 		.base = DT_INST_REG_ADDR(n),					\
 		.pcfg = PINCTRL_DT_INST_DEV_CONFIG_GET(n),			\
 		.clock_dev = COND_CODE_1(DT_INST_NODE_HAS_PROP(n, clocks),	\
@@ -394,12 +394,12 @@ static DEVICE_API(i2c, i2c_allwinner_d1_api) = {
 	};									\
 										\
 	I2C_DEVICE_DT_INST_DEFINE(n,						\
-				  i2c_allwinner_d1_init,			\
+				  i2c_sun6i_init,			\
 				  NULL,						\
-				  &i2c_allwinner_d1_data_##n,			\
-				  &i2c_allwinner_d1_cfg_##n,			\
+				  &i2c_sun6i_data_##n,			\
+				  &i2c_sun6i_cfg_##n,			\
 				  POST_KERNEL,					\
 				  CONFIG_I2C_INIT_PRIORITY,			\
-				  &i2c_allwinner_d1_api);
+				  &i2c_sun6i_api);
 
 DT_INST_FOREACH_STATUS_OKAY(I2C_SUN6I_INIT)

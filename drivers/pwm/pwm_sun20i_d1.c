@@ -41,7 +41,7 @@ LOG_MODULE_REGISTER(pwm_sun20i_d1, CONFIG_PWM_LOG_LEVEL);
 #define PCR_MODE         BIT(9)
 #define PCR_PUL_START    BIT(10)
 
-struct pwm_allwinner_d1_config {
+struct pwm_sun20i_d1_config {
 	uintptr_t base;
 	const struct pinctrl_dev_config *pcfg;
 	const struct device *clock_dev;
@@ -49,36 +49,36 @@ struct pwm_allwinner_d1_config {
 	uint32_t input_clk;
 };
 
-struct pwm_allwinner_d1_data {
+struct pwm_sun20i_d1_data {
 	uint32_t input_clk;
 };
 
-static inline uintptr_t pwm_allwinner_d1_reg(const struct pwm_allwinner_d1_config *cfg,
+static inline uintptr_t pwm_sun20i_d1_reg(const struct pwm_sun20i_d1_config *cfg,
 					      uint32_t offset)
 {
 	return cfg->base + offset;
 }
 
-static inline uintptr_t pwm_allwinner_d1_pcr(uint32_t channel)
+static inline uintptr_t pwm_sun20i_d1_pcr(uint32_t channel)
 {
 	return PWM_PCR_BASE + (channel * PWM_CH_STRIDE);
 }
 
-static inline uintptr_t pwm_allwinner_d1_ppr(uint32_t channel)
+static inline uintptr_t pwm_sun20i_d1_ppr(uint32_t channel)
 {
 	return PWM_PPR_BASE + (channel * PWM_CH_STRIDE);
 }
 
-static inline uintptr_t pwm_allwinner_d1_pccr(uint32_t channel)
+static inline uintptr_t pwm_sun20i_d1_pccr(uint32_t channel)
 {
 	return PWM_PCCR_BASE + ((channel / 2U) * 4U);
 }
 
-static int pwm_allwinner_d1_set_cycles(const struct device *dev, uint32_t channel,
+static int pwm_sun20i_d1_set_cycles(const struct device *dev, uint32_t channel,
 				       uint32_t period_cycles, uint32_t pulse_cycles,
 				       pwm_flags_t flags)
 {
-	const struct pwm_allwinner_d1_config *cfg = dev->config;
+	const struct pwm_sun20i_d1_config *cfg = dev->config;
 	uint32_t prescaler_k;
 	uint32_t period_pwm;
 	uint32_t pulse_pwm;
@@ -118,38 +118,38 @@ static int pwm_allwinner_d1_set_cycles(const struct device *dev, uint32_t channe
 		return -EINVAL;
 	}
 
-	pccr = sys_read32(pwm_allwinner_d1_reg(cfg, pwm_allwinner_d1_pccr(channel)));
+	pccr = sys_read32(pwm_sun20i_d1_reg(cfg, pwm_sun20i_d1_pccr(channel)));
 	pccr &= ~(PCCR_CLK_SRC_MASK | PCCR_CLK_DIV_MASK);
 	pccr |= (PCCR_CLK_SRC_HOSC << PCCR_CLK_SRC_SHIFT);
-	sys_write32(pccr, pwm_allwinner_d1_reg(cfg, pwm_allwinner_d1_pccr(channel)));
+	sys_write32(pccr, pwm_sun20i_d1_reg(cfg, pwm_sun20i_d1_pccr(channel)));
 
-	pcr = sys_read32(pwm_allwinner_d1_reg(cfg, pwm_allwinner_d1_pcr(channel)));
+	pcr = sys_read32(pwm_sun20i_d1_reg(cfg, pwm_sun20i_d1_pcr(channel)));
 	pcr &= ~(PCR_PRESCAL_MASK | PCR_ACT_STA | PCR_MODE | PCR_PUL_START);
 	pcr |= (prescaler_k - 1U) & PCR_PRESCAL_MASK;
 	if ((flags & PWM_POLARITY_INVERTED) == 0U) {
 		pcr |= PCR_ACT_STA;
 	}
-	sys_write32(pcr, pwm_allwinner_d1_reg(cfg, pwm_allwinner_d1_pcr(channel)));
+	sys_write32(pcr, pwm_sun20i_d1_reg(cfg, pwm_sun20i_d1_pcr(channel)));
 
 	ppr = ((period_pwm - 1U) << 16) | (pulse_pwm & 0xFFFFU);
-	sys_write32(ppr, pwm_allwinner_d1_reg(cfg, pwm_allwinner_d1_ppr(channel)));
+	sys_write32(ppr, pwm_sun20i_d1_reg(cfg, pwm_sun20i_d1_ppr(channel)));
 
-	pcgr = sys_read32(pwm_allwinner_d1_reg(cfg, PWM_PCGR));
+	pcgr = sys_read32(pwm_sun20i_d1_reg(cfg, PWM_PCGR));
 	pcgr |= PCGR_GATE_BIT(channel);
 	pcgr &= ~PCGR_BYPASS_BIT(channel);
-	sys_write32(pcgr, pwm_allwinner_d1_reg(cfg, PWM_PCGR));
+	sys_write32(pcgr, pwm_sun20i_d1_reg(cfg, PWM_PCGR));
 
-	per = sys_read32(pwm_allwinner_d1_reg(cfg, PWM_PER));
+	per = sys_read32(pwm_sun20i_d1_reg(cfg, PWM_PER));
 	per |= BIT(channel);
-	sys_write32(per, pwm_allwinner_d1_reg(cfg, PWM_PER));
+	sys_write32(per, pwm_sun20i_d1_reg(cfg, PWM_PER));
 
 	return 0;
 }
 
-static int pwm_allwinner_d1_get_cycles_per_sec(const struct device *dev,
+static int pwm_sun20i_d1_get_cycles_per_sec(const struct device *dev,
 					       uint32_t channel, uint64_t *cycles)
 {
-	struct pwm_allwinner_d1_data *data = dev->data;
+	struct pwm_sun20i_d1_data *data = dev->data;
 
 	if (channel >= PWM_CHANNELS) {
 		return -EINVAL;
@@ -159,10 +159,10 @@ static int pwm_allwinner_d1_get_cycles_per_sec(const struct device *dev,
 	return 0;
 }
 
-static int pwm_allwinner_d1_init(const struct device *dev)
+static int pwm_sun20i_d1_init(const struct device *dev)
 {
-	const struct pwm_allwinner_d1_config *cfg = dev->config;
-	struct pwm_allwinner_d1_data *data = dev->data;
+	const struct pwm_sun20i_d1_config *cfg = dev->config;
+	struct pwm_sun20i_d1_data *data = dev->data;
 	int ret;
 
 	if (cfg->clock_dev != NULL) {
@@ -191,17 +191,17 @@ static int pwm_allwinner_d1_init(const struct device *dev)
 	return 0;
 }
 
-static DEVICE_API(pwm, pwm_allwinner_d1_api) = {
-	.set_cycles = pwm_allwinner_d1_set_cycles,
-	.get_cycles_per_sec = pwm_allwinner_d1_get_cycles_per_sec,
+static DEVICE_API(pwm, pwm_sun20i_d1_api) = {
+	.set_cycles = pwm_sun20i_d1_set_cycles,
+	.get_cycles_per_sec = pwm_sun20i_d1_get_cycles_per_sec,
 };
 
 #define PWM_SUN20I_D1_INIT(n)                                                      \
 	PINCTRL_DT_INST_DEFINE(n);                                                    \
 										  \
-	static struct pwm_allwinner_d1_data pwm_allwinner_d1_data_##n;                 \
+	static struct pwm_sun20i_d1_data pwm_sun20i_d1_data_##n;                 \
 										  \
-	static const struct pwm_allwinner_d1_config pwm_allwinner_d1_cfg_##n = {       \
+	static const struct pwm_sun20i_d1_config pwm_sun20i_d1_cfg_##n = {       \
 		.base = DT_INST_REG_ADDR(n),                                             \
 		.pcfg = PINCTRL_DT_INST_DEV_CONFIG_GET(n),                               \
 		.clock_dev = COND_CODE_1(DT_INST_NODE_HAS_PROP(n, clocks),               \
@@ -214,11 +214,11 @@ static DEVICE_API(pwm, pwm_allwinner_d1_api) = {
 		.input_clk = 24000000U,                                                \
 	};                                                                            \
 										  \
-	DEVICE_DT_INST_DEFINE(n, pwm_allwinner_d1_init, NULL,                       \
-			      &pwm_allwinner_d1_data_##n,                          \
-			      &pwm_allwinner_d1_cfg_##n,                           \
+	DEVICE_DT_INST_DEFINE(n, pwm_sun20i_d1_init, NULL,                       \
+			      &pwm_sun20i_d1_data_##n,                          \
+			      &pwm_sun20i_d1_cfg_##n,                           \
 			      POST_KERNEL,                                         \
 			      CONFIG_PWM_INIT_PRIORITY,                            \
-			      &pwm_allwinner_d1_api);
+			      &pwm_sun20i_d1_api);
 
 DT_INST_FOREACH_STATUS_OKAY(PWM_SUN20I_D1_INIT)
