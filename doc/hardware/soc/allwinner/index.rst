@@ -5,3 +5,4 @@ Allwinner SoCs
    :maxdepth: 1
 
    egon_header
+   ip_cores

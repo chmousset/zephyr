@@ -9,12 +9,10 @@ Allwinner SoCs boot from an on‑chip BROM (boot ROM). The BROM loads a bootable
 image into SRAM and jumps to its entry point. On sunxi devices, that image
 starts with an eGON.BT0 header (sometimes called a “boot0” header).
 
-Authoritative references (linux‑sunxi):
+Authoritative references (linux-sunxi):
 
-::
-
-   https://linux-sunxi.org/BROM
-   https://linux-sunxi.org/EGON
+- `BROM <https://linux-sunxi.org/BROM>`_
+- `eGON <https://linux-sunxi.org/EGON>`_
 
 Most documented SoCs have a BROM image size limit of 24 KiB or 32 KiB for the
 SRAM‑loaded first stage. Keep your SRAM image within that limit.

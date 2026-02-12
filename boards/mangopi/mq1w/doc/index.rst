@@ -27,12 +27,21 @@ UART
 * UART3 TX = PB6
 * UART3 RX = PB7
 
+SPI
+---
+* SCK = PC2
+* CS = PC3
+* MOSI = PC4
+* MISO = PC5
+* WP = PC6
+* HOLD = PC7
+
 Programming and Debugging
 *************************
 
 .. zephyr:board-supported-runners::
 
-This board can be loaded via FEL using :ref:`xfel`. See the Allwinner booting
+This board can be loaded via FEL using `xfel`_. See the Allwinner booting
 documentation for details about the eGON.BT0 header and SRAM/DDR workflows:
 :ref:`allwinner_egon_header`.
 
@@ -64,15 +73,9 @@ terminal marked "3" near the camera and display connector.
 References
 **********
 * `MangoPi MQ1W product page`_
-* `Allwinner BROM documentation`_
-* `eGON.BT0 documentation`_
-* `Allwinner SoC IP cores`_ — documents which peripheral IP blocks are shared
-  across Allwinner SoC generations; used to determine driver naming conventions
-  (e.g. ``sun6i`` for SPI/I2C shared IP vs ``sun20i_d1`` for D1-specific blocks)
+* :ref:`allwinner_egon_header` — eGON.BT0 boot process and FEL loading
+* :ref:`allwinner_ip_cores` — driver naming conventions and IP block reuse
 * `xfel`_
 
 .. _MangoPi MQ1W product page: https://mangopi.org/mangopi_mq
-.. _Allwinner BROM documentation: https://linux-sunxi.org/BROM
-.. _eGON.BT0 documentation: https://linux-sunxi.org/EGON
-.. _Allwinner SoC IP cores: https://linux-sunxi.org/Used_IP_cores
 .. _xfel: https://github.com/xboot/xfel
